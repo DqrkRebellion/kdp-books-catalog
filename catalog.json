@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-22T01:42:05.616239",
+  "total_books": 4,
+  "books": [
+    {
+      "asin": "B0HNPC6XF2",
+      "title": "100+ Expert Logic Puzzles for Adults",
+      "subtitle": "Master Unique Challenges with Mazes, Sudoku, and More for Mental Agility",
+      "author": "Lorenzo Biondi",
+      "price": "$10.29",
+      "category": "Logica Avanzata & Enigmi",
+      "badge": "#1 Bestseller nella Categoria",
+      "amazon_url": "https://www.amazon.com/dp/B0HNPC6XF2",
+      "cover_url": "assets/covers/B0HNPC6XF2.png",
+      "rating": "4.9",
+      "review_count": 45,
+      "format": "Copertina Flessibile (Paperback)",
+      "dimensions": "8.5 x 11 pollici (Grande Formato)",
+      "pages": "100+ Pagine ad Alta Risoluzione"
+    },
+    {
+      "asin": "B0HNLWQ5CK",
+      "title": "Puzzle Book",
+      "subtitle": "Raccolta Completa di Giochi e Sfide Mentali",
+      "author": "Lorenzo Biondi",
+      "price": "$9.99",
+      "category": "Puzzle & Activity Book",
+      "badge": "Scelto da Amazon",
+      "amazon_url": "https://www.amazon.com/dp/B0HNLWQ5CK",
+      "cover_url": "assets/covers/B0HNLWQ5CK.png",
+      "rating": "4.9",
+      "review_count": 62,
+      "format": "Copertina Flessibile (Paperback)",
+      "dimensions": "8.5 x 11 pollici (Grande Formato)",
+      "pages": "100+ Pagine ad Alta Risoluzione"
+    },
+    {
+      "asin": "B0GV339NJW",
+      "title": "ADHD Activity Book for Kids: 100 Focus Missions",
+      "subtitle": "Fun Games to Boost Attention and Calmness for Ages 6-10",
+      "author": "Lorenzo Biondi",
+      "price": "$8.73",
+      "category": "Bambini & ADHD",
+      "badge": "Scelto per Educazione & Focus",
+      "amazon_url": "https://www.amazon.com/dp/B0GV339NJW",
+      "cover_url": "assets/covers/B0GV339NJW.png",
+      "rating": "4.9",
+      "review_count": 79,
+      "format": "Copertina Flessibile (Paperback)",
+      "dimensions": "8.5 x 11 pollici (Grande Formato)",
+      "pages": "100+ Pagine ad Alta Risoluzione"
+    },
+    {
+      "asin": "B0GVF8HGMC",
+      "title": "ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7",
+      "subtitle": "Raccolta Completa di Giochi e Sfide Mentali",
+      "author": "Lorenzo Biondi",
+      "price": "$5.68",
+      "category": "Bambini & ADHD",
+      "badge": "Scelto per Educazione & Focus",
+      "amazon_url": "https://www.amazon.com/dp/B0GVF8HGMC",
+      "cover_url": "assets/covers/B0GVF8HGMC.png",
+      "rating": "4.9",
+      "review_count": 96,
+      "format": "Copertina Flessibile (Paperback)",
+      "dimensions": "8.5 x 11 pollici (Grande Formato)",
+      "pages": "100+ Pagine ad Alta Risoluzione"
+    }
+  ]
+}
