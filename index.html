@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Storefront • Vetrina Ufficiale Pubblicazioni KDP</title>
-    <meta name="description" content="Catalogo ufficiale dei libri di logica, puzzle e activity book pubblicati su Amazon KDP. Copertina flessibile, alta risoluzione e spedizione Prime veloce.">
+    <title>Lorenzo Biondi • Libri di Logica, Giochi &amp; Attività su Carta</title>
+    <meta name="description" content="Scopri i libri di passatempi, logica per adulti, caratteri grandi per senior e quaderni di attività per bambini di Lorenzo Biondi. Sfoglia l'anteprima e acquista su Amazon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --amz-dark: #131921;
-            --amz-nav: #232f3e;
-            --amz-orange: #ff9900;
-            --amz-orange-dark: #e47911;
-            --amz-yellow: #ffd814;
-            --amz-yellow-hover: #f7ca00;
-            --amz-prime-blue: #00a8e1;
-            --amz-border: #d5d9d9;
-            --amz-card-bg: #ffffff;
-            --amz-bg: #eaeded;
-            --amz-text: #0f1111;
-            --amz-text-muted: #565959;
-            --amz-green: #007600;
+            --bg-cream: #FAF7F2;
+            --bg-surface: #FFFFFF;
+            --bg-subtle: #F3EFE6;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --text-muted: #78716C;
+            --border-warm: #E7E2D8;
+            --border-hover: #D6CEBF;
+            --accent-terracotta: #B45309;
+            --accent-amber: #F59E0B;
+            --amz-btn: #FF9900;
+            --amz-btn-hover: #E68A00;
+            --green-trust: #15803D;
+            --green-bg: #DCFCE7;
+            --radius-lg: 16px;
+            --radius-md: 10px;
         }
 
         * {
@@ -33,952 +36,1252 @@
         }
 
         body {
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--amz-bg);
-            color: var(--amz-text);
-            line-height: 1.4;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
         /* ----------------------------------------------------
-           HEADER AMAZON STYLE
+           HEADER EDITORIALE SOBRIO
         ---------------------------------------------------- */
-        .amz-header {
-            background-color: var(--amz-dark);
-            color: white;
-            padding: 12px 24px;
+        .site-header {
+            background: rgba(250, 247, 242, 0.94);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-warm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 14px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            gap: 16px;
         }
 
-        .brand-logo-area {
+        .author-brand {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: white;
+            color: var(--text-primary);
         }
 
-        .brand-logo-circle {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #232f3e;
-            border: 2px solid var(--amz-orange);
-            overflow: hidden;
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #1C1917;
+            color: #FAF7F2;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .brand-logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .brand-title {
-            font-size: 1.25rem;
-            font-weight: 800;
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 700;
+            font-size: 1.1rem;
             letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+
+        .brand-text-group {
             display: flex;
-            align-items: center;
-            gap: 6px;
+            flex-direction: column;
         }
 
-        .brand-title span.accent {
-            color: var(--amz-orange);
-        }
-
-        .brand-subtitle {
-            font-size: 0.75rem;
-            color: #cccccc;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .search-container {
-            flex: 1;
-            max-width: 550px;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 10px 42px 10px 14px;
-            border-radius: 6px;
-            border: none;
-            font-size: 0.95rem;
-            outline: none;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .search-input:focus {
-            box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.5);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #555;
-            pointer-events: none;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.85rem;
-        }
-
-        .badge-verified {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #232f3e;
-            padding: 6px 12px;
-            border-radius: 4px;
-            border: 1px solid #3a4b61;
-            color: #febd69;
-            font-weight: 600;
-        }
-
-        /* ----------------------------------------------------
-           HERO BANNER
-        ---------------------------------------------------- */
-        .hero-banner {
-            background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
-            color: white;
-            padding: 35px 24px 30px;
-            border-bottom: 4px solid var(--amz-orange);
-        }
-
-        .hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .hero-text h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.1rem;
-            font-weight: 800;
-            margin-bottom: 8px;
+        .brand-name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
             line-height: 1.2;
         }
 
-        .hero-text p {
-            font-size: 1.05rem;
-            color: #d5d9d9;
-            max-width: 650px;
+        .brand-tagline {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
         }
 
-        .hero-features {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .feature-item {
+        .header-reassurance {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            background: var(--bg-subtle);
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border-warm);
         }
 
-        .feature-item span.icon {
-            color: var(--amz-orange);
-            font-size: 1.1rem;
+        .header-reassurance svg {
+            color: var(--green-trust);
+            flex-shrink: 0;
         }
 
         /* ----------------------------------------------------
-           FILTER CONTROLS
+           HERO CHIARO E ACCOGLIENTE
         ---------------------------------------------------- */
-        .filter-section {
-            background: #ffffff;
-            border-bottom: 1px solid var(--amz-border);
-            padding: 12px 24px;
-            position: sticky;
-            top: 68px;
-            z-index: 900;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        .hero-section {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 40px 24px 28px;
         }
 
-        .filter-inner {
-            max-width: 1280px;
-            margin: 0 auto;
+        .hero-box {
+            max-width: 780px;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent-terracotta);
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.35rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.08rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .trust-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 8px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .trust-item svg {
+            color: var(--accent-terracotta);
+            flex-shrink: 0;
+        }
+
+        /* ----------------------------------------------------
+           BARRA DI SCELTA RAPIDA ("PER CHI CERCHI IL LIBRO?")
+        ---------------------------------------------------- */
+        .selector-bar {
+            max-width: 1140px;
+            margin: 0 auto 28px;
+            padding: 0 24px;
+        }
+
+        .selector-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 18px 22px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 16px;
+            box-shadow: 0 2px 10px rgba(28, 25, 23, 0.03);
         }
 
-        .filter-buttons {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: #f0f2f2;
-            border: 1px solid #d5d9d9;
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #0f1111;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn:hover {
-            background: #e3e6e6;
-            border-color: #a88734;
-        }
-
-        .filter-btn.active {
-            background: #fff;
-            border-color: var(--amz-orange);
-            color: var(--amz-orange-dark);
-            box-shadow: 0 0 0 1px var(--amz-orange);
-        }
-
-        .sort-area {
+        .filter-group {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--amz-text-muted);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .sort-select {
-            padding: 6px 12px;
-            border-radius: 6px;
-            border: 1px solid var(--amz-border);
-            background: #f0f2f2;
-            font-size: 0.85rem;
-            outline: none;
+        .filter-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-right: 4px;
+        }
+
+        .filter-pill {
+            appearance: none;
+            background: var(--bg-cream);
+            border: 1px solid var(--border-warm);
+            border-radius: 999px;
+            padding: 9px 16px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            transition: all 0.18s ease;
+            min-height: 42px;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            background: #FFFFFF;
+        }
+
+        .filter-pill.active {
+            background: var(--text-primary);
+            border-color: var(--text-primary);
+            color: #FFFFFF;
+        }
+
+        .pill-count {
+            font-size: 0.78rem;
+            padding: 1px 7px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.07);
+            color: inherit;
+        }
+
+        .filter-pill.active .pill-count {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 240px;
+            flex: 1;
+            max-width: 310px;
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .search-field {
+            width: 100%;
+            padding: 10px 14px 10px 38px;
+            border-radius: 999px;
+            border: 1px solid var(--border-warm);
+            background: var(--bg-cream);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            outline: none;
+            transition: border-color 0.18s ease, background 0.18s ease;
+        }
+
+        .search-field:focus {
+            background: #FFFFFF;
+            border-color: var(--accent-terracotta);
         }
 
         /* ----------------------------------------------------
-           STOREFRONT GRID
+           ELENCO LIBRI (SCHEDE AMPIE E LEGGIBILI)
         ---------------------------------------------------- */
-        .catalog-container {
-            max-width: 1280px;
-            margin: 25px auto 50px;
+        .catalog-main {
+            max-width: 1140px;
+            margin: 0 auto 64px;
             padding: 0 24px;
         }
 
-        .results-count {
-            font-size: 0.95rem;
-            color: var(--amz-text-muted);
-            margin-bottom: 20px;
-        }
-
-        .books-grid {
+        .books-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 24px;
         }
 
-        /* ----------------------------------------------------
-           BOOK CARD AMAZON STYLE
-        ---------------------------------------------------- */
         .book-card {
-            background: var(--amz-card-bg);
-            border: 1px solid var(--amz-border);
-            border-radius: 8px;
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-            position: relative;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            align-items: start;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 18px rgba(28, 25, 23, 0.04);
         }
 
         .book-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            border-color: var(--amz-orange);
+            border-color: var(--border-hover);
+            box-shadow: 0 10px 28px rgba(28, 25, 23, 0.08);
         }
 
-        .card-badge {
-            min-height: 24px;
+        .cover-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cover-link {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .cover-frame {
+            background: var(--bg-subtle);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-warm);
+        }
+
+        .cover-img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+            display: block;
+            transition: transform 0.25s ease;
+        }
+
+        .cover-link:hover .cover-img {
+            transform: translateY(-3px) scale(1.01);
+        }
+
+        .look-inside-chip {
+            appearance: none;
+            background: transparent;
+            border: none;
+            color: var(--accent-terracotta);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            padding: 4px 8px;
+        }
+
+        .look-inside-chip:hover {
+            color: var(--text-primary);
+        }
+
+        .info-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .card-top-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 10px;
         }
 
-        .amazon-choice-badge {
+        .audience-pill {
             display: inline-block;
-            background: #232f3e;
-            color: #febd69;
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.02em;
         }
 
-        /* Effetto 3D realistico per il libro */
-        .cover-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 5px 0 15px;
+        .audience-bambini-3-5 {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .audience-bambini-6-7 {
+            background: #E0F2FE;
+            color: #075985;
+        }
+
+        .audience-adulti-logica {
+            background: #F3E8FF;
+            color: #6B21A8;
+        }
+
+        .audience-senior-large-print {
+            background: #DCFCE7;
+            color: #166534;
+        }
+
+        .book-specs-inline {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .book-heading {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.28;
+            margin-bottom: 8px;
+        }
+
+        .book-heading a {
+            color: var(--text-primary);
             text-decoration: none;
-            perspective: 800px;
         }
 
-        .book-3d {
-            position: relative;
-            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-            transform-style: preserve-3d;
+        .book-heading a:hover {
+            color: var(--accent-terracotta);
         }
 
-        .book-card:hover .book-3d {
-            transform: rotateY(-8deg) translateY(-5px);
+        .book-lead {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
         }
 
-        .book-img {
-            width: 190px;
-            height: auto;
-            border-radius: 3px 5px 5px 3px;
-            box-shadow: -4px 6px 14px rgba(0, 0, 0, 0.22);
-            display: block;
-            background: #eee;
+        .highlights-box {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            margin-bottom: 14px;
         }
 
-        .book-spine {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 8px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.2) 100%);
-            border-radius: 3px 0 0 3px;
-            pointer-events: none;
+        .highlights-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
         }
 
-        .book-shadow {
-            position: absolute;
-            bottom: -8px;
-            left: 5%;
-            width: 90%;
-            height: 12px;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
-            pointer-events: none;
-        }
-
-        .card-details {
+        .highlights-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
-            flex: 1;
+            gap: 7px;
         }
 
-        .category-tag {
-            font-size: 0.72rem;
-            color: var(--amz-text-muted);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-            margin-bottom: 4px;
+        .highlights-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.93rem;
+            color: var(--text-primary);
+            line-height: 1.45;
         }
 
-        .book-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 4px;
-            max-height: 2.6em;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--green-trust);
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .book-title a {
-            color: var(--amz-text);
-            text-decoration: none;
-            transition: color 0.15s ease;
+        .ideal-for-note {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
         }
 
-        .book-title a:hover {
-            color: var(--amz-orange-dark);
-            text-decoration: underline;
+        .ideal-for-note strong {
+            color: var(--text-primary);
         }
 
-        .book-subtitle {
-            font-size: 0.8rem;
-            color: var(--amz-text-muted);
-            margin-bottom: 6px;
-            line-height: 1.3;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .book-author {
-            font-size: 0.82rem;
-            color: var(--amz-text-muted);
-            margin-bottom: 8px;
-        }
-
-        .book-author .author-name {
-            font-weight: 600;
-            color: var(--amz-text);
-        }
-
-        .rating-row {
+        .card-footer {
+            margin-top: auto;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-warm);
             display: flex;
             align-items: center;
-            gap: 5px;
-            margin-bottom: 8px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
-        .stars {
-            color: #ffa41c;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
+        .price-block {
+            display: flex;
+            flex-direction: column;
         }
 
-        .rating-score {
-            font-weight: 700;
-            font-size: 0.85rem;
+        .price-label {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
-        .review-count {
-            font-size: 0.8rem;
-            color: #007185;
-        }
-
-        .price-row {
+        .price-value-row {
             display: flex;
             align-items: baseline;
             gap: 10px;
-            margin-bottom: 4px;
         }
 
-        .amazon-price {
+        .price-amount {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .shipping-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green-trust);
+            background: var(--green-bg);
+            padding: 2px 9px;
+            border-radius: 999px;
+        }
+
+        .lang-subnote {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .card-actions {
             display: flex;
-            align-items: flex-start;
-            color: var(--amz-text);
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-secondary {
+            appearance: none;
+            background: #FFFFFF;
+            border: 1px solid var(--border-hover);
+            border-radius: 999px;
+            padding: 12px 20px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.18s ease;
+            min-height: 46px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-subtle);
+            border-color: var(--text-primary);
+        }
+
+        .btn-amazon {
+            background: var(--amz-btn);
+            border: 1px solid #E08600;
+            border-radius: 999px;
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1C1917;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.18s ease;
+            box-shadow: 0 2px 6px rgba(255, 153, 0, 0.25);
+            min-height: 46px;
+        }
+
+        .btn-amazon:hover {
+            background: var(--amz-btn-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 153, 0, 0.35);
+        }
+
+        .empty-state {
+            display: none;
+            text-align: center;
+            padding: 48px 24px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+        }
+
+        .empty-state p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        /* ----------------------------------------------------
+           SEZIONE COME FUNZIONA L'ACQUISTO
+        ---------------------------------------------------- */
+        .how-it-works {
+            max-width: 1140px;
+            margin: 0 auto 56px;
+            padding: 0 24px;
+        }
+
+        .how-grid {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .how-step h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .how-step p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* ----------------------------------------------------
+           MODAL ANTEPRIMA PAGINE INTERNE ("GUARDA DENTRO")
+        ---------------------------------------------------- */
+        .preview-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 25, 23, 0.72);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .preview-modal-backdrop.open {
+            display: flex;
+        }
+
+        .preview-modal {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            max-width: 960px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+        }
+
+        .modal-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border-warm);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .modal-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
-        .price-symbol {
-            font-size: 0.85rem;
-            margin-top: 3px;
-        }
-
-        .price-whole {
-            font-size: 1.55rem;
-            line-height: 1;
-        }
-
-        .price-fraction {
-            font-size: 0.85rem;
-            margin-top: 3px;
-        }
-
-        .prime-badge {
-            display: flex;
-            align-items: center;
-            font-weight: 800;
-            font-size: 0.85rem;
-            color: var(--amz-prime-blue);
-        }
-
-        .prime-check {
-            color: var(--amz-orange);
-            font-weight: 900;
-            margin-right: 2px;
-        }
-
-        .delivery-note {
-            font-size: 0.78rem;
-            color: var(--amz-green);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .format-info {
-            font-size: 0.75rem;
-            color: var(--amz-text-muted);
-            margin-bottom: 15px;
-            padding-top: 6px;
-            border-top: 1px dashed var(--amz-border);
-        }
-
-        .cta-wrapper {
-            margin-top: auto;
-        }
-
-        .amazon-btn {
+        .modal-close {
+            appearance: none;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-warm);
+            border-radius: 999px;
+            width: 38px;
+            height: 38px;
+            font-size: 1.2rem;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            background: var(--bg-cream);
+        }
+
+        .modal-subtitle {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .preview-pages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .preview-page-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-warm);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+
+        .preview-page-card img {
             width: 100%;
-            background: var(--amz-yellow);
-            border: 1px solid #fcd200;
-            border-radius: 20px;
-            padding: 10px 14px;
-            font-size: 0.9rem;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            border: 1px solid #EEE;
+        }
+
+        .preview-page-label {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 8px;
             font-weight: 600;
-            color: var(--amz-text);
-            text-decoration: none;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
-            transition: all 0.15s ease;
         }
 
-        .amazon-btn:hover {
-            background: var(--amz-yellow-hover);
-            border-color: #f2c200;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-        }
-
-        .cart-icon {
-            fill: #111;
+        .modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid var(--border-warm);
+            background: var(--bg-surface);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         /* ----------------------------------------------------
            FOOTER
         ---------------------------------------------------- */
-        .amz-footer {
-            background: var(--amz-nav);
-            color: #d5d9d9;
-            padding: 35px 24px 20px;
-            margin-top: 60px;
-            font-size: 0.85rem;
-            border-top: 4px solid var(--amz-orange);
+        .site-footer {
+            border-top: 1px solid var(--border-warm);
+            background: var(--bg-subtle);
+            padding: 36px 24px;
+            font-size: 0.86rem;
+            color: var(--text-secondary);
         }
 
         .footer-inner {
-            max-width: 1280px;
+            max-width: 1140px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            align-items: center;
+            gap: 12px;
             text-align: center;
+            align-items: center;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .footer-note {
+            max-width: 680px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
-        .footer-links a {
-            color: #d5d9d9;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-            color: var(--amz-orange);
-        }
-
-        .footer-disclaimer {
-            max-width: 800px;
-            font-size: 0.75rem;
-            color: #999999;
-            line-height: 1.5;
-        }
-
-        .sync-tag {
-            background: rgba(255,255,255,0.06);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: #febd69;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .amz-header {
-                flex-direction: column;
-                align-items: stretch;
+        @media (max-width: 820px) {
+            .book-card {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
             }
-            .search-container {
-                max-width: 100%;
+            .cover-img {
+                max-width: 175px;
             }
-            .hero-text h1 {
-                font-size: 1.6rem;
+            .hero-title {
+                font-size: 1.85rem;
             }
-            .filter-inner {
-                flex-direction: column;
-                align-items: stretch;
+            .how-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
             }
-            .books-grid {
+            .preview-pages-grid {
                 grid-template-columns: 1fr;
             }
-            .book-card {
-                padding: 14px;
+            .header-reassurance {
+                display: none;
+            }
+            .search-box {
+                max-width: 100%;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Amazon Style -->
-    <header class="amz-header">
-        <a href="#" class="brand-logo-area">
-            <div class="brand-logo-circle">
-                <img src="assets/logo.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23ff9900\'/><text x=\'50\' y=\'65\' font-size=\'45\' font-weight=\'bold\' text-anchor=\'middle\' fill=\'%23131921\'>KDP</text></svg>'" alt="Logo Brand">
-            </div>
-            <div>
-                <div class="brand-title">PUZZLE PRESS <span class="accent">STORE</span></div>
-                <div class="brand-subtitle">Vetrina Ufficiale Amazon KDP</div>
-            </div>
-        </a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="author-brand">
+                <div class="brand-mark">LB</div>
+                <div class="brand-text-group">
+                    <span class="brand-name">Lorenzo Biondi</span>
+                    <span class="brand-tagline">Libri di Logica, Giochi &amp; Attività</span>
+                </div>
+            </a>
 
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Cerca tra i libri di puzzle, logica, sudoku, adhd...">
-            <span class="search-icon">🔍</span>
-        </div>
-
-        <div class="header-actions">
-            <div class="badge-verified">
-                <span>✓</span> Autore Ufficiale KDP
+            <div class="header-reassurance">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                </svg>
+                <span>Acquisto sicuro e spedizione veloce su Amazon</span>
             </div>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <div class="hero-inner">
-            <div class="hero-text">
-                <h1>Vetrina Ufficiale delle Nostre Pubblicazioni</h1>
-                <p>Scopri tutte le nostre collezioni di puzzle book cartacei per adulti e bambini. Stampati e spediti direttamente da Amazon con la massima qualità tipografica.</p>
-            </div>
-            <div class="hero-features">
-                <div class="feature-item">
-                    <span class="icon">📦</span>
-                    <div>Spedizione Prime Gratuita</div>
+    <section class="hero-section">
+        <div class="hero-box">
+            <span class="hero-eyebrow">Catalogo Libri Cartacei</span>
+            <h1 class="hero-title">Passatempi, sfide di logica e quaderni di attività per ogni età</h1>
+            <p class="hero-subtitle">
+                Scegli il libro più adatto a te o ai tuoi bambini, sfoglia un'anteprima reale delle pagine interne
+                e ordinalo comodamente su Amazon con consegna a domicilio.
+            </p>
+            <div class="trust-strip">
+                <div class="trust-item">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
+                    </svg>
+                    <span>Formato grande (21,6 × 27,9 cm) comodo da scrivere</span>
                 </div>
-                <div class="feature-item">
-                    <span class="icon">✨</span>
-                    <div>Carta Bianca 8.5" x 11"</div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Anteprima pagine disponibile per ogni libro</span>
                 </div>
-                <div class="feature-item">
-                    <span class="icon">🧠</span>
-                    <div>Algoritmi Matematici 100% Puri</div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Venduto e spedito da Amazon</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Filtri e Ordinamento -->
-    <section class="filter-section">
-        <div class="filter-inner">
-            <div class="filter-buttons" id="categoryFilters">
-                <button class="filter-btn active" data-filter="all">Tutti i Volumi</button><button class="filter-btn" data-filter="Bambini &amp; ADHD">Bambini &amp; ADHD</button><button class="filter-btn" data-filter="Logica Avanzata &amp; Enigmi">Logica Avanzata &amp; Enigmi</button><button class="filter-btn" data-filter="Nonogrammi Giapponesi">Nonogrammi Giapponesi</button>
+    <section class="selector-bar" aria-label="Filtra i libri per destinatario">
+        <div class="selector-card">
+            <div class="filter-group" id="categoryFilters">
+                <span class="filter-label">Per chi cerchi il libro?</span>
+                <button type="button" class="filter-pill active" data-filter="all">Tutti i libri <span class="pill-count">4</span></button><button type="button" class="filter-pill" data-filter="bambini-3-5">Bambini 3–5 anni <span class="pill-count">1</span></button><button type="button" class="filter-pill" data-filter="bambini-6-7">Bambini 6–7 anni <span class="pill-count">1</span></button><button type="button" class="filter-pill" data-filter="adulti-logica">Adulti • Logica <span class="pill-count">1</span></button><button type="button" class="filter-pill" data-filter="senior-large-print">Senior • Caratteri Grandi <span class="pill-count">1</span></button>
             </div>
-            <div class="sort-area">
-                <label for="sortSelect">Ordina per:</label>
-                <select id="sortSelect" class="sort-select">
-                    <option value="featured">In Evidenza (Amazon Choice)</option>
-                    <option value="price-asc">Prezzo: dal più basso</option>
-                    <option value="price-desc">Prezzo: dal più alto</option>
-                    <option value="title-asc">Titolo (A - Z)</option>
-                </select>
+
+            <div class="search-box">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/>
+                </svg>
+                <input type="search" id="searchInput" class="search-field" placeholder="Cerca per età, sudoku, labirinti..." aria-label="Cerca nel catalogo">
             </div>
         </div>
     </section>
 
-    <!-- Main Container Card Libri -->
-    <main class="catalog-container">
-        <div class="results-count" id="resultsCount">
-            Visualizzazione di <strong>4 volumi</strong> disponibili su Amazon
+    <main class="catalog-main">
+        <div class="books-list" id="booksGrid">
+            
+        <article class="book-card" data-category="bambini-3-5" data-search="100 focus missions — activity book (3–5 anni) adhd activity book for kids: 100 focus missions un quaderno di 100 attività giocose e strutturate per aiutare i bambini più piccoli a sviluppare attenzione, calma e coordinazione passo dopo passo. bambini 3–5 anni • scuola materna 100 missioni brevi e varie: tracciati, labirinti semplici, trova le differenze, forme e disegni da completare pensato per bambini di 3–5 anni: attività visive e intuitive, non richiede di saper leggere pagine ampie e ariose che evitano il sovraccarico visivo e mantengono vivo l&#x27;interesse">
+            <div class="cover-column">
+                <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="cover-link" aria-label="Vai alla pagina Amazon di 100 Focus Missions — Activity Book (3–5 Anni)">
+                    <div class="cover-frame">
+                        <img src="assets/covers/B0GV339NJW.png" alt="Copertina del libro 100 Focus Missions — Activity Book (3–5 Anni)" loading="lazy" class="cover-img">
+                    </div>
+                </a>
+                
+                <button type="button" class="look-inside-chip js-open-preview"
+                        data-title="100 Focus Missions — Activity Book (3–5 Anni)"
+                        data-url="https://www.amazon.com/dp/B0GV339NJW"
+                        data-price="$8.73"
+                        data-previews="[&quot;assets/previews/B0GV339NJW_p1.png&quot;, &quot;assets/previews/B0GV339NJW_p2.png&quot;, &quot;assets/previews/B0GV339NJW_p3.png&quot;]"
+                        aria-label="Sfoglia anteprima di 100 Focus Missions — Activity Book (3–5 Anni)">
+                    Sfoglia anteprima
+                </button>
+            
+            </div>
+
+            <div class="info-column">
+                <div class="card-top-meta">
+                    <span class="audience-pill audience-bambini-3-5">Bambini 3–5 Anni • Scuola Materna</span>
+                    <span class="book-specs-inline">100 pagine • 21,6 × 27,9 cm (Formato Grande)</span>
+                </div>
+
+                <h2 class="book-heading">
+                    <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer">100 Focus Missions — Activity Book (3–5 Anni)</a>
+                </h2>
+
+                <p class="book-lead">Un quaderno di 100 attività giocose e strutturate per aiutare i bambini più piccoli a sviluppare attenzione, calma e coordinazione passo dopo passo.</p>
+
+                <div class="highlights-box">
+                    <div class="highlights-title">Cosa trovi in questo libro:</div>
+                    <ul class="highlights-list">
+                        <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>100 missioni brevi e varie: tracciati, labirinti semplici, trova le differenze, forme e disegni da completare</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Pensato per bambini di 3–5 anni: attività visive e intuitive, non richiede di saper leggere</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Pagine ampie e ariose che evitano il sovraccarico visivo e mantengono vivo l&#x27;interesse</span></li>
+                    </ul>
+                </div>
+
+                <div class="ideal-for-note">
+                    <strong>Ideale per:</strong> Genitori e insegnanti che cercano attività tranquille, lontane dagli schermi, per allenare la concentrazione dei più piccoli.
+                </div>
+
+                <div class="card-footer">
+                    <div class="price-block">
+                        <span class="price-label">Prezzo Amazon</span>
+                        <div class="price-value-row">
+                            <span class="price-amount">$8.73</span>
+                            <span class="shipping-tag">Spedizione rapida Prime</span>
+                        </div>
+                        <span class="lang-subnote">Copertina flessibile • Istruzioni brevi in inglese semplice (giochi 100% visivi e intuitivi)</span>
+                    </div>
+
+                    <div class="card-actions">
+                        
+                <button type="button" class="btn-secondary js-open-preview"
+                        data-title="100 Focus Missions — Activity Book (3–5 Anni)"
+                        data-url="https://www.amazon.com/dp/B0GV339NJW"
+                        data-price="$8.73"
+                        data-previews="[&quot;assets/previews/B0GV339NJW_p1.png&quot;, &quot;assets/previews/B0GV339NJW_p2.png&quot;, &quot;assets/previews/B0GV339NJW_p3.png&quot;]">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+                        <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Guarda dentro (3 pagine)</span>
+                </button>
+            
+                        <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                            <span>Acquista su Amazon</span>
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="book-card" data-category="bambini-6-7" data-search="100 focus missions — activity book (6–7 anni) adhd activity book for kids: 100 focus missions - ages 6-7 100 sfide progressive progettate per i bambini dei primi anni della scuola primaria, per allenare concentrazione, logica e autocontrollo senza mai annoiarsi. bambini 6–7 anni • primi anni scuola mix coinvolgente di labirinti, sequenze logiche, ricerca parole, schemi e giochi di osservazione strutturato in &#x27;missioni&#x27; brevi che danno un senso immediato di conquista e fiducia in sé difficoltà graduale studiata per accompagnare il bambino senza creare frustrazione">
+            <div class="cover-column">
+                <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="cover-link" aria-label="Vai alla pagina Amazon di 100 Focus Missions — Activity Book (6–7 Anni)">
+                    <div class="cover-frame">
+                        <img src="assets/covers/B0GVF8HGMC.png" alt="Copertina del libro 100 Focus Missions — Activity Book (6–7 Anni)" loading="lazy" class="cover-img">
+                    </div>
+                </a>
+                
+                <button type="button" class="look-inside-chip js-open-preview"
+                        data-title="100 Focus Missions — Activity Book (6–7 Anni)"
+                        data-url="https://www.amazon.com/dp/B0GVF8HGMC"
+                        data-price="$5.68"
+                        data-previews="[&quot;assets/previews/B0GVF8HGMC_p1.png&quot;, &quot;assets/previews/B0GVF8HGMC_p2.png&quot;, &quot;assets/previews/B0GVF8HGMC_p3.png&quot;]"
+                        aria-label="Sfoglia anteprima di 100 Focus Missions — Activity Book (6–7 Anni)">
+                    Sfoglia anteprima
+                </button>
+            
+            </div>
+
+            <div class="info-column">
+                <div class="card-top-meta">
+                    <span class="audience-pill audience-bambini-6-7">Bambini 6–7 Anni • Primi Anni Scuola</span>
+                    <span class="book-specs-inline">100 pagine • 21,6 × 27,9 cm (Formato Grande)</span>
+                </div>
+
+                <h2 class="book-heading">
+                    <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer">100 Focus Missions — Activity Book (6–7 Anni)</a>
+                </h2>
+
+                <p class="book-lead">100 sfide progressive progettate per i bambini dei primi anni della scuola primaria, per allenare concentrazione, logica e autocontrollo senza mai annoiarsi.</p>
+
+                <div class="highlights-box">
+                    <div class="highlights-title">Cosa trovi in questo libro:</div>
+                    <ul class="highlights-list">
+                        <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Mix coinvolgente di labirinti, sequenze logiche, ricerca parole, schemi e giochi di osservazione</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Strutturato in &#x27;missioni&#x27; brevi che danno un senso immediato di conquista e fiducia in sé</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Difficoltà graduale studiata per accompagnare il bambino senza creare frustrazione</span></li>
+                    </ul>
+                </div>
+
+                <div class="ideal-for-note">
+                    <strong>Ideale per:</strong> Bambini di 6 e 7 anni che hanno bisogno di attività stimolanti e ben ritmate per canalizzare l&#x27;energia.
+                </div>
+
+                <div class="card-footer">
+                    <div class="price-block">
+                        <span class="price-label">Prezzo Amazon</span>
+                        <div class="price-value-row">
+                            <span class="price-amount">$5.68</span>
+                            <span class="shipping-tag">Spedizione rapida Prime</span>
+                        </div>
+                        <span class="lang-subnote">Copertina flessibile • Edizione in inglese semplice per bambini (giochi logici e visivi)</span>
+                    </div>
+
+                    <div class="card-actions">
+                        
+                <button type="button" class="btn-secondary js-open-preview"
+                        data-title="100 Focus Missions — Activity Book (6–7 Anni)"
+                        data-url="https://www.amazon.com/dp/B0GVF8HGMC"
+                        data-price="$5.68"
+                        data-previews="[&quot;assets/previews/B0GVF8HGMC_p1.png&quot;, &quot;assets/previews/B0GVF8HGMC_p2.png&quot;, &quot;assets/previews/B0GVF8HGMC_p3.png&quot;]">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+                        <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Guarda dentro (3 pagine)</span>
+                </button>
+            
+                        <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                            <span>Acquista su Amazon</span>
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="book-card" data-category="adulti-logica" data-search="100+ expert logic puzzles for adults 100+ expert logic puzzles for adults una raccolta completa di oltre 100 enigmi e sfide deduttive per chi ama mettere alla prova la mente con passatempi sempre diversi su carta. adulti • livello esperto 5 diversi giochi in un solo volume: sudoku, labirinti complessi, griglie logiche, crittogrammi e ricerca parole spazio dedicato su ogni pagina per scrivere appunti, ipotesi e ragionamenti a matita soluzioni complete e ordinate incluse nella sezione finale del libro">
+            <div class="cover-column">
+                <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" class="cover-link" aria-label="Vai alla pagina Amazon di 100+ Expert Logic Puzzles for Adults">
+                    <div class="cover-frame">
+                        <img src="assets/covers/B0HNPC6XF2.png" alt="Copertina del libro 100+ Expert Logic Puzzles for Adults" loading="lazy" class="cover-img">
+                    </div>
+                </a>
+                
+                <button type="button" class="look-inside-chip js-open-preview"
+                        data-title="100+ Expert Logic Puzzles for Adults"
+                        data-url="https://www.amazon.com/dp/B0HNPC6XF2"
+                        data-price="$10.29"
+                        data-previews="[&quot;assets/previews/B0HNPC6XF2_p1.png&quot;, &quot;assets/previews/B0HNPC6XF2_p2.png&quot;, &quot;assets/previews/B0HNPC6XF2_p3.png&quot;]"
+                        aria-label="Sfoglia anteprima di 100+ Expert Logic Puzzles for Adults">
+                    Sfoglia anteprima
+                </button>
+            
+            </div>
+
+            <div class="info-column">
+                <div class="card-top-meta">
+                    <span class="audience-pill audience-adulti-logica">Adulti • Livello Esperto</span>
+                    <span class="book-specs-inline">130 pagine • 21,6 × 27,9 cm (Formato Grande)</span>
+                </div>
+
+                <h2 class="book-heading">
+                    <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer">100+ Expert Logic Puzzles for Adults</a>
+                </h2>
+
+                <p class="book-lead">Una raccolta completa di oltre 100 enigmi e sfide deduttive per chi ama mettere alla prova la mente con passatempi sempre diversi su carta.</p>
+
+                <div class="highlights-box">
+                    <div class="highlights-title">Cosa trovi in questo libro:</div>
+                    <ul class="highlights-list">
+                        <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>5 diversi giochi in un solo volume: Sudoku, Labirinti complessi, Griglie Logiche, Crittogrammi e Ricerca Parole</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Spazio dedicato su ogni pagina per scrivere appunti, ipotesi e ragionamenti a matita</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Soluzioni complete e ordinate incluse nella sezione finale del libro</span></li>
+                    </ul>
+                </div>
+
+                <div class="ideal-for-note">
+                    <strong>Ideale per:</strong> Appassionati di enigmistica e logica che vogliono staccare dal telefono e dedicarsi a sfide impegnative.
+                </div>
+
+                <div class="card-footer">
+                    <div class="price-block">
+                        <span class="price-label">Prezzo Amazon</span>
+                        <div class="price-value-row">
+                            <span class="price-amount">$10.29</span>
+                            <span class="shipping-tag">Spedizione rapida Prime</span>
+                        </div>
+                        <span class="lang-subnote">Copertina flessibile • Edizione in inglese (enigmi numerici, logici e linguistici)</span>
+                    </div>
+
+                    <div class="card-actions">
+                        
+                <button type="button" class="btn-secondary js-open-preview"
+                        data-title="100+ Expert Logic Puzzles for Adults"
+                        data-url="https://www.amazon.com/dp/B0HNPC6XF2"
+                        data-price="$10.29"
+                        data-previews="[&quot;assets/previews/B0HNPC6XF2_p1.png&quot;, &quot;assets/previews/B0HNPC6XF2_p2.png&quot;, &quot;assets/previews/B0HNPC6XF2_p3.png&quot;]">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+                        <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Guarda dentro (3 pagine)</span>
+                </button>
+            
+                        <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                            <span>Acquista su Amazon</span>
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="book-card" data-category="senior-large-print" data-search="101 mindful puzzles for seniors (large print) 101 mindful puzzles to boost memory for seniors 101 passatempi rilassanti a caratteri grandi, studiati per mantenere attiva la memoria e la lucidità mentale in modo piacevole e senza affaticare la vista. senior &amp; adulti • caratteri grandi stampa ad alta leggibilità con caratteri grandi (large print) e griglie spaziose varietà equilibrata di giochi: nonogrammi, griglie logiche, sudoku, kakuro e cifrari tutte le soluzioni sono facilmente consultabili in fondo al volume">
+            <div class="cover-column">
+                <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" class="cover-link" aria-label="Vai alla pagina Amazon di 101 Mindful Puzzles for Seniors (Large Print)">
+                    <div class="cover-frame">
+                        <img src="assets/covers/B0HNLWQ5CK.png" alt="Copertina del libro 101 Mindful Puzzles for Seniors (Large Print)" loading="lazy" class="cover-img">
+                    </div>
+                </a>
+                
+                <button type="button" class="look-inside-chip js-open-preview"
+                        data-title="101 Mindful Puzzles for Seniors (Large Print)"
+                        data-url="https://www.amazon.com/dp/B0HNLWQ5CK"
+                        data-price="$9.99"
+                        data-previews="[&quot;assets/previews/B0HNLWQ5CK_p1.png&quot;, &quot;assets/previews/B0HNLWQ5CK_p2.png&quot;, &quot;assets/previews/B0HNLWQ5CK_p3.png&quot;]"
+                        aria-label="Sfoglia anteprima di 101 Mindful Puzzles for Seniors (Large Print)">
+                    Sfoglia anteprima
+                </button>
+            
+            </div>
+
+            <div class="info-column">
+                <div class="card-top-meta">
+                    <span class="audience-pill audience-senior-large-print">Senior &amp; Adulti • Caratteri Grandi</span>
+                    <span class="book-specs-inline">80 pagine • 21,6 × 27,9 cm (Formato Grande)</span>
+                </div>
+
+                <h2 class="book-heading">
+                    <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer">101 Mindful Puzzles for Seniors (Large Print)</a>
+                </h2>
+
+                <p class="book-lead">101 passatempi rilassanti a caratteri grandi, studiati per mantenere attiva la memoria e la lucidità mentale in modo piacevole e senza affaticare la vista.</p>
+
+                <div class="highlights-box">
+                    <div class="highlights-title">Cosa trovi in questo libro:</div>
+                    <ul class="highlights-list">
+                        <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Stampa ad alta leggibilità con caratteri grandi (Large Print) e griglie spaziose</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Varietà equilibrata di giochi: Nonogrammi, Griglie Logiche, Sudoku, Kakuro e Cifrari</span></li>
+<li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg><span>Tutte le soluzioni sono facilmente consultabili in fondo al volume</span></li>
+                    </ul>
+                </div>
+
+                <div class="ideal-for-note">
+                    <strong>Ideale per:</strong> Lettori senior, nonni o chiunque desideri un libro di passatempi chiaro, rilassante e comodo da leggere.
+                </div>
+
+                <div class="card-footer">
+                    <div class="price-block">
+                        <span class="price-label">Prezzo Amazon</span>
+                        <div class="price-value-row">
+                            <span class="price-amount">$9.99</span>
+                            <span class="shipping-tag">Spedizione rapida Prime</span>
+                        </div>
+                        <span class="lang-subnote">Copertina flessibile • Edizione in inglese (griglie logiche, numeriche e visive)</span>
+                    </div>
+
+                    <div class="card-actions">
+                        
+                <button type="button" class="btn-secondary js-open-preview"
+                        data-title="101 Mindful Puzzles for Seniors (Large Print)"
+                        data-url="https://www.amazon.com/dp/B0HNLWQ5CK"
+                        data-price="$9.99"
+                        data-previews="[&quot;assets/previews/B0HNLWQ5CK_p1.png&quot;, &quot;assets/previews/B0HNLWQ5CK_p2.png&quot;, &quot;assets/previews/B0HNLWQ5CK_p3.png&quot;]">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+                        <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Guarda dentro (3 pagine)</span>
+                </button>
+            
+                        <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                            <span>Acquista su Amazon</span>
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
         </div>
 
-        <div class="books-grid" id="booksGrid">
-            
-        <article class="book-card" data-category="Logica Avanzata &amp; Enigmi" data-title="100+ expert logic puzzles for adults" data-price="10.29">
-            <div class="card-badge">
-                <span class="amazon-choice-badge">#1 Bestseller nella Categoria</span>
-            </div>
-            
-            <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: 100+ Expert Logic Puzzles for Adults">
-                <div class="book-3d">
-                    <img src="assets/covers/B0HNPC6XF2.png" alt="100+ Expert Logic Puzzles for Adults" loading="lazy" class="book-img">
-                    <div class="book-spine"></div>
-                    <div class="book-shadow"></div>
-                </div>
-            </a>
-
-            <div class="card-details">
-                <div class="category-tag">Logica Avanzata &amp; Enigmi</div>
-                <h2 class="book-title">
-                    <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" title="100+ Expert Logic Puzzles for Adults">100+ Expert Logic Puzzles for Adults</a>
-                </h2>
-                <p class="book-subtitle">Master Unique Challenges with Mazes, Sudoku, and More for Mental Agility</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
-
-                <div class="rating-row">
-                    <div class="stars" title="Valutazione: 4.9 su 5 stelle">
-                        ★★★★★
-                    </div>
-                    <span class="rating-score">4.9</span>
-                    <span class="review-count">(45)</span>
-                </div>
-
-                <div class="price-row">
-                    <div class="amazon-price">
-                        <span class="price-symbol">$</span>
-                        <span class="price-whole">10</span>
-                        <span class="price-fraction">29</span>
-                    </div>
-                    <div class="prime-badge" title="Spedizione Prime Gratuita">
-                        <span class="prime-check">✓</span><span class="prime-text">prime</span>
-                    </div>
-                </div>
-
-                <div class="delivery-note">
-                    Consegna GRATUITA con Amazon Prime
-                </div>
-
-                <div class="format-info">
-                    <span>Copertina Flessibile (Paperback)</span> • <span>8.5 x 11 pollici (Grande Formato)</span>
-                </div>
-
-                <div class="cta-wrapper">
-                    <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" class="amazon-btn">
-                        <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-                        </svg>
-                        <span>Acquista su Amazon</span>
-                    </a>
-                </div>
-            </div>
-        </article>
-        
-        <article class="book-card" data-category="Nonogrammi Giapponesi" data-title="puzzle book" data-price="9.99">
-            <div class="card-badge">
-                <span class="amazon-choice-badge">Scelto da Amazon</span>
-            </div>
-            
-            <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: Puzzle Book">
-                <div class="book-3d">
-                    <img src="assets/covers/B0HNLWQ5CK.png" alt="Puzzle Book" loading="lazy" class="book-img">
-                    <div class="book-spine"></div>
-                    <div class="book-shadow"></div>
-                </div>
-            </a>
-
-            <div class="card-details">
-                <div class="category-tag">Nonogrammi Giapponesi</div>
-                <h2 class="book-title">
-                    <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" title="Puzzle Book">Puzzle Book</a>
-                </h2>
-                <p class="book-subtitle">Enhance Focus &amp; Relaxation with Unique Logic Puzzles</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
-
-                <div class="rating-row">
-                    <div class="stars" title="Valutazione: 4.9 su 5 stelle">
-                        ★★★★★
-                    </div>
-                    <span class="rating-score">4.9</span>
-                    <span class="review-count">(62)</span>
-                </div>
-
-                <div class="price-row">
-                    <div class="amazon-price">
-                        <span class="price-symbol">$</span>
-                        <span class="price-whole">9</span>
-                        <span class="price-fraction">99</span>
-                    </div>
-                    <div class="prime-badge" title="Spedizione Prime Gratuita">
-                        <span class="prime-check">✓</span><span class="prime-text">prime</span>
-                    </div>
-                </div>
-
-                <div class="delivery-note">
-                    Consegna GRATUITA con Amazon Prime
-                </div>
-
-                <div class="format-info">
-                    <span>Copertina Flessibile (Paperback)</span> • <span>8.5 x 11 pollici (Grande Formato)</span>
-                </div>
-
-                <div class="cta-wrapper">
-                    <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" class="amazon-btn">
-                        <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-                        </svg>
-                        <span>Acquista su Amazon</span>
-                    </a>
-                </div>
-            </div>
-        </article>
-        
-        <article class="book-card" data-category="Bambini &amp; ADHD" data-title="adhd activity book for kids: 100 focus missions" data-price="8.73">
-            <div class="card-badge">
-                <span class="amazon-choice-badge">Scelto per Educazione &amp; Focus</span>
-            </div>
-            
-            <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: ADHD Activity Book for Kids: 100 Focus Missions">
-                <div class="book-3d">
-                    <img src="assets/covers/B0GV339NJW.png" alt="ADHD Activity Book for Kids: 100 Focus Missions" loading="lazy" class="book-img">
-                    <div class="book-spine"></div>
-                    <div class="book-shadow"></div>
-                </div>
-            </a>
-
-            <div class="card-details">
-                <div class="category-tag">Bambini &amp; ADHD</div>
-                <h2 class="book-title">
-                    <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" title="ADHD Activity Book for Kids: 100 Focus Missions">ADHD Activity Book for Kids: 100 Focus Missions</a>
-                </h2>
-                <p class="book-subtitle">Simple, Engaging Activities to Strengthen Focus, Attention, and Self-Control in Toddlers and Preschoolers</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
-
-                <div class="rating-row">
-                    <div class="stars" title="Valutazione: 4.9 su 5 stelle">
-                        ★★★★★
-                    </div>
-                    <span class="rating-score">4.9</span>
-                    <span class="review-count">(79)</span>
-                </div>
-
-                <div class="price-row">
-                    <div class="amazon-price">
-                        <span class="price-symbol">$</span>
-                        <span class="price-whole">8</span>
-                        <span class="price-fraction">73</span>
-                    </div>
-                    <div class="prime-badge" title="Spedizione Prime Gratuita">
-                        <span class="prime-check">✓</span><span class="prime-text">prime</span>
-                    </div>
-                </div>
-
-                <div class="delivery-note">
-                    Consegna GRATUITA con Amazon Prime
-                </div>
-
-                <div class="format-info">
-                    <span>Copertina Flessibile (Paperback)</span> • <span>8.5 x 11 pollici (Grande Formato)</span>
-                </div>
-
-                <div class="cta-wrapper">
-                    <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="amazon-btn">
-                        <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-                        </svg>
-                        <span>Acquista su Amazon</span>
-                    </a>
-                </div>
-            </div>
-        </article>
-        
-        <article class="book-card" data-category="Bambini &amp; ADHD" data-title="adhd activity book for kids: 100 focus missions - ages 6-7" data-price="5.68">
-            <div class="card-badge">
-                <span class="amazon-choice-badge">Scelto per Educazione &amp; Focus</span>
-            </div>
-            
-            <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7">
-                <div class="book-3d">
-                    <img src="assets/covers/B0GVF8HGMC.png" alt="ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7" loading="lazy" class="book-img">
-                    <div class="book-spine"></div>
-                    <div class="book-shadow"></div>
-                </div>
-            </a>
-
-            <div class="card-details">
-                <div class="category-tag">Bambini &amp; ADHD</div>
-                <h2 class="book-title">
-                    <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" title="ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7">ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7</a>
-                </h2>
-                <p class="book-subtitle">Mazes, Sequences, Word Searches, and More to Build Focus, Attention, and Self-Control in Early Elementary Children</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
-
-                <div class="rating-row">
-                    <div class="stars" title="Valutazione: 4.9 su 5 stelle">
-                        ★★★★★
-                    </div>
-                    <span class="rating-score">4.9</span>
-                    <span class="review-count">(96)</span>
-                </div>
-
-                <div class="price-row">
-                    <div class="amazon-price">
-                        <span class="price-symbol">$</span>
-                        <span class="price-whole">5</span>
-                        <span class="price-fraction">68</span>
-                    </div>
-                    <div class="prime-badge" title="Spedizione Prime Gratuita">
-                        <span class="prime-check">✓</span><span class="prime-text">prime</span>
-                    </div>
-                </div>
-
-                <div class="delivery-note">
-                    Consegna GRATUITA con Amazon Prime
-                </div>
-
-                <div class="format-info">
-                    <span>Copertina Flessibile (Paperback)</span> • <span>8.5 x 11 pollici (Grande Formato)</span>
-                </div>
-
-                <div class="cta-wrapper">
-                    <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="amazon-btn">
-                        <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-                        </svg>
-                        <span>Acquista su Amazon</span>
-                    </a>
-                </div>
-            </div>
-        </article>
-        
+        <div class="empty-state" id="emptyState">
+            <p>Nessun libro trovato con questi filtri.</p>
+            <button type="button" class="btn-secondary" id="resetFiltersBtn">Mostra tutti i libri</button>
         </div>
     </main>
 
-    <!-- Footer Amazon Store -->
-    <footer class="amz-footer">
+    <section class="how-it-works">
+        <div class="how-grid">
+            <div class="how-step">
+                <h3>1. Scegli e sfoglia l'anteprima</h3>
+                <p>Usa i pulsanti in alto per filtrare per età e clicca su "Guarda dentro" per vedere alcune pagine reali del libro.</p>
+            </div>
+            <div class="how-step">
+                <h3>2. Ordina su Amazon in un clic</h3>
+                <p>Cliccando su "Acquista su Amazon" si apre direttamente la pagina ufficiale del libro su Amazon, senza passaggi intermedi.</p>
+            </div>
+            <div class="how-step">
+                <h3>3. Consegna rapida e garantita</h3>
+                <p>La stampa, il pagamento e la spedizione Prime sono gestiti interamente da Amazon con la garanzia di reso standard.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finestra Modale Anteprima Pagine Interne -->
+    <div class="preview-modal-backdrop" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="preview-modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Anteprima pagine interne</h3>
+                <button type="button" class="modal-close" id="closeModalBtn" aria-label="Chiudi anteprima">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">Ecco 3 pagine estratte direttamente dall'interno del libro:</p>
+                <div class="preview-pages-grid" id="modalPagesContainer"></div>
+            </div>
+            <div class="modal-footer">
+                <span id="modalPriceNote" style="font-weight: 600; color: var(--text-secondary);"></span>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn-amazon" id="modalAmazonLink">
+                    <span>Acquista ora su Amazon</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
         <div class="footer-inner">
-            <div class="sync-tag">
-                🔄 Catalogo auto-aggiornato automaticamente • Ultima sincronizzazione: 22/10/2026 alle ore 21:02
-            </div>
-            <div class="footer-links">
-                <a href="#top">Torna a inizio pagina ↑</a>
-                <a href="https://kdp.amazon.com" target="_blank" rel="noopener">Amazon KDP</a>
-                <a href="https://www.amazon.com" target="_blank" rel="noopener">Amazon Store</a>
-            </div>
-            <div class="footer-disclaimer">
-                Tutti i libri presenti in questo catalogo sono prodotti editoriali originali registrati e distribuiti a livello globale tramite la piattaforma Amazon Kindle Direct Publishing (KDP). Amazon, Prime e i rispettivi loghi sono marchi registrati di Amazon.com, Inc. o delle sue affiliate. Cliccando su ciascun titolo verrai reindirizzato direttamente alla pagina ufficiale del prodotto per l'acquisto in sicurezza su Amazon.
-            </div>
+            <div><strong>Lorenzo Biondi</strong> — Catalogo Pubblicazioni Cartacee</div>
+            <p class="footer-note">
+                Tutti i volumi sono disponibili su Amazon. Amazon e Amazon Prime sono marchi registrati di Amazon.com, Inc. o delle sue società affiliate.
+            </p>
         </div>
     </footer>
 
-    <!-- Script di Ricerca, Filtro e Ordinamento Istantaneo (Zero-Reload) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('searchInput');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const sortSelect = document.getElementById('sortSelect');
-            const booksGrid = document.getElementById('booksGrid');
-            const resultsCount = document.getElementById('resultsCount');
+            const filterBtns = document.querySelectorAll('.filter-pill');
             const cards = Array.from(document.querySelectorAll('.book-card'));
+            const emptyState = document.getElementById('emptyState');
+            const resetFiltersBtn = document.getElementById('resetFiltersBtn');
 
             let currentCategory = 'all';
             let currentSearch = '';
@@ -988,23 +1291,22 @@
 
                 cards.forEach(card => {
                     const cardCat = card.getAttribute('data-category');
-                    const cardTitle = card.getAttribute('data-title');
-                    
+                    const cardSearch = card.getAttribute('data-search') || '';
+
                     const matchCategory = (currentCategory === 'all' || cardCat === currentCategory);
-                    const matchSearch = (!currentSearch || cardTitle.includes(currentSearch));
+                    const matchSearch = (!currentSearch || cardSearch.includes(currentSearch));
 
                     if (matchCategory && matchSearch) {
-                        card.style.display = 'flex';
+                        card.style.display = '';
                         visibleCount++;
                     } else {
                         card.style.display = 'none';
                     }
                 });
 
-                resultsCount.innerHTML = `Visualizzazione di <strong>${visibleCount} volumi</strong> disponibili su Amazon`;
+                emptyState.style.display = (visibleCount === 0) ? 'block' : 'none';
             }
 
-            // Event listener Categorie
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterBtns.forEach(b => b.classList.remove('active'));
@@ -1014,26 +1316,82 @@
                 });
             });
 
-            // Event listener Ricerca in tempo reale
             searchInput.addEventListener('input', (e) => {
                 currentSearch = e.target.value.toLowerCase().trim();
                 updateDisplay();
             });
 
-            // Event listener Ordinamento
-            sortSelect.addEventListener('change', () => {
-                const val = sortSelect.value;
-                const sortedCards = [...cards];
+            if (resetFiltersBtn) {
+                resetFiltersBtn.addEventListener('click', () => {
+                    currentCategory = 'all';
+                    currentSearch = '';
+                    searchInput.value = '';
+                    filterBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-filter') === 'all'));
+                    updateDisplay();
+                });
+            }
 
-                if (val === 'price-asc') {
-                    sortedCards.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
-                } else if (val === 'price-desc') {
-                    sortedCards.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
-                } else if (val === 'title-asc') {
-                    sortedCards.sort((a, b) => a.dataset.title.localeCompare(b.dataset.title));
+            // Gestione Modale "Guarda dentro"
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalPagesContainer = document.getElementById('modalPagesContainer');
+            const modalAmazonLink = document.getElementById('modalAmazonLink');
+            const modalPriceNote = document.getElementById('modalPriceNote');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            function openPreviewModal(title, url, price, previews) {
+                modalTitle.textContent = title;
+                modalAmazonLink.href = url;
+                modalPriceNote.textContent = 'Prezzo su Amazon: ' + price;
+                modalPagesContainer.innerHTML = '';
+
+                previews.forEach((src, idx) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'preview-page-card';
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = 'Pagina interna di esempio ' + (idx + 1);
+                    img.loading = 'lazy';
+                    const label = document.createElement('span');
+                    label.className = 'preview-page-label';
+                    label.textContent = 'Esempio pagina interna ' + (idx + 1);
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(label);
+                    modalPagesContainer.appendChild(wrapper);
+                });
+
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePreviewModal() {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.js-open-preview').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const title = btn.getAttribute('data-title');
+                    const url = btn.getAttribute('data-url');
+                    const price = btn.getAttribute('data-price');
+                    let previews = [];
+                    try {
+                        previews = JSON.parse(btn.getAttribute('data-previews') || '[]');
+                    } catch (e) {}
+                    if (previews.length > 0) {
+                        openPreviewModal(title, url, price, previews);
+                    }
+                });
+            });
+
+            closeModalBtn.addEventListener('click', closePreviewModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closePreviewModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('open')) {
+                    closePreviewModal();
                 }
-
-                sortedCards.forEach(card => booksGrid.appendChild(card));
             });
         });
     </script>
