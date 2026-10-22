@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T01:42:05.616239",
+  "generated_at": "2026-10-22T21:00:16.708453",
   "total_books": 4,
   "books": [
     {
@@ -21,10 +21,10 @@
     {
       "asin": "B0HNLWQ5CK",
       "title": "Puzzle Book",
-      "subtitle": "Raccolta Completa di Giochi e Sfide Mentali",
+      "subtitle": "Enhance Focus & Relaxation with Unique Logic Puzzles",
       "author": "Lorenzo Biondi",
       "price": "$9.99",
-      "category": "Puzzle & Activity Book",
+      "category": "Nonogrammi Giapponesi",
       "badge": "Scelto da Amazon",
       "amazon_url": "https://www.amazon.com/dp/B0HNLWQ5CK",
       "cover_url": "assets/covers/B0HNLWQ5CK.png",
@@ -37,7 +37,7 @@
     {
       "asin": "B0GV339NJW",
       "title": "ADHD Activity Book for Kids: 100 Focus Missions",
-      "subtitle": "Fun Games to Boost Attention and Calmness for Ages 6-10",
+      "subtitle": "Simple, Engaging Activities to Strengthen Focus, Attention, and Self-Control in Toddlers and Preschoolers",
       "author": "Lorenzo Biondi",
       "price": "$8.73",
       "category": "Bambini & ADHD",
@@ -53,7 +53,7 @@
     {
       "asin": "B0GVF8HGMC",
       "title": "ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7",
-      "subtitle": "Raccolta Completa di Giochi e Sfide Mentali",
+      "subtitle": "Mazes, Sequences, Word Searches, and More to Build Focus, Attention, and Self-Control in Early Elementary Children",
       "author": "Lorenzo Biondi",
       "price": "$5.68",
       "category": "Bambini & ADHD",
