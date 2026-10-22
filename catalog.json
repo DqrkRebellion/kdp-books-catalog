@@ -7,11 +7,11 @@
       "subtitle": "Oltre 100 sfide di logica tra Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Ricerca Parole",
       "author": "Lorenzo Biondi",
       "price": "$10.29",
-      "category": "Adulti • Logica & Enigmi",
+      "category": "Adulti • Logica",
       "badge": "Per Adulti • Livello Esperto",
       "bullets": [
-        "5 giochi diversi: Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Parole",
-        "Spazio per appunti su ogni pagina + Soluzioni complete a fine libro"
+        "5 giochi: Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Parole",
+        "Spazio appunti su ogni pagina e soluzioni complete a fine libro"
       ],
       "amazon_url": "https://www.amazon.com/dp/B0HNPC6XF2",
       "cover_url": "assets/covers/B0HNPC6XF2.png",
@@ -21,7 +21,7 @@
         "assets/previews/B0HNPC6XF2_p3.png"
       ],
       "format": "Copertina Flessibile",
-      "dimensions": "130 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "dimensions": "130 Pagine • Formato 21,6 × 27,9 cm",
       "pages": "130 Pagine"
     },
     {
@@ -34,7 +34,7 @@
       "badge": "Caratteri Grandi (Large Print)",
       "bullets": [
         "Stampa grande ad alta leggibilità con griglie ampie e riposanti",
-        "Mix vario: Nonogrammi, Griglie Logiche, Sudoku, Kakuro e Cifrari con soluzioni"
+        "Nonogrammi, Griglie Logiche, Sudoku, Kakuro e Cifrari con soluzioni"
       ],
       "amazon_url": "https://www.amazon.com/dp/B0HNLWQ5CK",
       "cover_url": "assets/covers/B0HNLWQ5CK.png",
@@ -44,7 +44,7 @@
         "assets/previews/B0HNLWQ5CK_p3.png"
       ],
       "format": "Copertina Flessibile",
-      "dimensions": "80 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "dimensions": "80 Pagine • Formato 21,6 × 27,9 cm",
       "pages": "80 Pagine"
     },
     {
@@ -57,7 +57,7 @@
       "badge": "Età 3–5 Anni • Scuola Materna",
       "bullets": [
         "100 giochi visivi: tracciati, labirinti semplici, differenze e forme",
-        "Studiato per bambini di 3–5 anni (non serve saper leggere)"
+        "Studiato per bambini di 3–5 anni (non richiede di saper leggere)"
       ],
       "amazon_url": "https://www.amazon.com/dp/B0GV339NJW",
       "cover_url": "assets/covers/B0GV339NJW.png",
@@ -67,7 +67,7 @@
         "assets/previews/B0GV339NJW_p3.png"
       ],
       "format": "Copertina Flessibile",
-      "dimensions": "100 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "dimensions": "100 Pagine • Formato 21,6 × 27,9 cm",
       "pages": "100 Pagine"
     },
     {
@@ -79,8 +79,8 @@
       "category": "Bambini 6–7 Anni",
       "badge": "Età 6–7 Anni • Scuola Primaria",
       "bullets": [
-        "100 missioni progressive: labirinti, sequenze, parole intrecciate e logica",
-        "Ideale per i primi anni delle elementari per imparare divertendosi"
+        "100 missioni progressive: labirinti, sequenze, parole e logica",
+        "Ideale per i primi anni delle elementari per imparare giocando"
       ],
       "amazon_url": "https://www.amazon.com/dp/B0GVF8HGMC",
       "cover_url": "assets/covers/B0GVF8HGMC.png",
@@ -90,7 +90,7 @@
         "assets/previews/B0GVF8HGMC_p3.png"
       ],
       "format": "Copertina Flessibile",
-      "dimensions": "100 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "dimensions": "100 Pagine • Formato 21,6 × 27,9 cm",
       "pages": "100 Pagine"
     }
   ]
