@@ -2,83 +2,17 @@
   "total_books": 4,
   "books": [
     {
-      "asin": "B0GV339NJW",
-      "title": "100 Focus Missions — Activity Book (3–5 Anni)",
-      "original_title": "ADHD Activity Book for Kids: 100 Focus Missions",
-      "subtitle": "Simple, Engaging Activities to Strengthen Focus, Attention, and Self-Control in Toddlers and Preschoolers",
-      "author": "Lorenzo Biondi",
-      "price": "$8.73",
-      "category_id": "bambini-3-5",
-      "category": "Bambini 3–5 anni",
-      "badge": "Bambini 3–5 Anni • Scuola Materna",
-      "short_description": "Un quaderno di 100 attività giocose e strutturate per aiutare i bambini più piccoli a sviluppare attenzione, calma e coordinazione passo dopo passo.",
-      "highlights": [
-        "100 missioni brevi e varie: tracciati, labirinti semplici, trova le differenze, forme e disegni da completare",
-        "Pensato per bambini di 3–5 anni: attività visive e intuitive, non richiede di saper leggere",
-        "Pagine ampie e ariose che evitano il sovraccarico visivo e mantengono vivo l'interesse"
-      ],
-      "ideal_for": "Genitori e insegnanti che cercano attività tranquille, lontane dagli schermi, per allenare la concentrazione dei più piccoli.",
-      "language_note": "Istruzioni brevi in inglese semplice (giochi 100% visivi e intuitivi)",
-      "amazon_url": "https://www.amazon.com/dp/B0GV339NJW",
-      "cover_url": "assets/covers/B0GV339NJW.png",
-      "preview_images": [
-        "assets/previews/B0GV339NJW_p1.png",
-        "assets/previews/B0GV339NJW_p2.png",
-        "assets/previews/B0GV339NJW_p3.png"
-      ],
-      "page_count": 100,
-      "format": "Copertina flessibile",
-      "dimensions": "21,6 × 27,9 cm (Formato Grande)",
-      "pages": "100 pagine"
-    },
-    {
-      "asin": "B0GVF8HGMC",
-      "title": "100 Focus Missions — Activity Book (6–7 Anni)",
-      "original_title": "ADHD Activity Book for Kids: 100 Focus Missions - Ages 6-7",
-      "subtitle": "Mazes, Sequences, Word Searches, and More to Build Focus, Attention, and Self-Control in Early Elementary Children",
-      "author": "Lorenzo Biondi",
-      "price": "$5.68",
-      "category_id": "bambini-6-7",
-      "category": "Bambini 6–7 anni",
-      "badge": "Bambini 6–7 Anni • Primi Anni Scuola",
-      "short_description": "100 sfide progressive progettate per i bambini dei primi anni della scuola primaria, per allenare concentrazione, logica e autocontrollo senza mai annoiarsi.",
-      "highlights": [
-        "Mix coinvolgente di labirinti, sequenze logiche, ricerca parole, schemi e giochi di osservazione",
-        "Strutturato in 'missioni' brevi che danno un senso immediato di conquista e fiducia in sé",
-        "Difficoltà graduale studiata per accompagnare il bambino senza creare frustrazione"
-      ],
-      "ideal_for": "Bambini di 6 e 7 anni che hanno bisogno di attività stimolanti e ben ritmate per canalizzare l'energia.",
-      "language_note": "Edizione in inglese semplice per bambini (giochi logici e visivi)",
-      "amazon_url": "https://www.amazon.com/dp/B0GVF8HGMC",
-      "cover_url": "assets/covers/B0GVF8HGMC.png",
-      "preview_images": [
-        "assets/previews/B0GVF8HGMC_p1.png",
-        "assets/previews/B0GVF8HGMC_p2.png",
-        "assets/previews/B0GVF8HGMC_p3.png"
-      ],
-      "page_count": 100,
-      "format": "Copertina flessibile",
-      "dimensions": "21,6 × 27,9 cm (Formato Grande)",
-      "pages": "100 pagine"
-    },
-    {
       "asin": "B0HNPC6XF2",
       "title": "100+ Expert Logic Puzzles for Adults",
-      "original_title": "100+ Expert Logic Puzzles for Adults",
-      "subtitle": "Master Unique Challenges with Mazes, Sudoku, and More for Mental Agility",
+      "subtitle": "Oltre 100 sfide di logica tra Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Ricerca Parole",
       "author": "Lorenzo Biondi",
       "price": "$10.29",
-      "category_id": "adulti-logica",
-      "category": "Adulti • Logica",
-      "badge": "Adulti • Livello Esperto",
-      "short_description": "Una raccolta completa di oltre 100 enigmi e sfide deduttive per chi ama mettere alla prova la mente con passatempi sempre diversi su carta.",
-      "highlights": [
-        "5 diversi giochi in un solo volume: Sudoku, Labirinti complessi, Griglie Logiche, Crittogrammi e Ricerca Parole",
-        "Spazio dedicato su ogni pagina per scrivere appunti, ipotesi e ragionamenti a matita",
-        "Soluzioni complete e ordinate incluse nella sezione finale del libro"
+      "category": "Adulti • Logica & Enigmi",
+      "badge": "Per Adulti • Livello Esperto",
+      "bullets": [
+        "5 giochi diversi: Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Parole",
+        "Spazio per appunti su ogni pagina + Soluzioni complete a fine libro"
       ],
-      "ideal_for": "Appassionati di enigmistica e logica che vogliono staccare dal telefono e dedicarsi a sfide impegnative.",
-      "language_note": "Edizione in inglese (enigmi numerici, logici e linguistici)",
       "amazon_url": "https://www.amazon.com/dp/B0HNPC6XF2",
       "cover_url": "assets/covers/B0HNPC6XF2.png",
       "preview_images": [
@@ -86,29 +20,22 @@
         "assets/previews/B0HNPC6XF2_p2.png",
         "assets/previews/B0HNPC6XF2_p3.png"
       ],
-      "page_count": 130,
-      "format": "Copertina flessibile",
-      "dimensions": "21,6 × 27,9 cm (Formato Grande)",
-      "pages": "130 pagine"
+      "format": "Copertina Flessibile",
+      "dimensions": "130 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "pages": "130 Pagine"
     },
     {
       "asin": "B0HNLWQ5CK",
       "title": "101 Mindful Puzzles for Seniors (Large Print)",
-      "original_title": "101 Mindful Puzzles to Boost Memory for Seniors",
-      "subtitle": "Enhance Focus & Relaxation with Unique Logic Puzzles",
+      "subtitle": "101 passatempi rilassanti a caratteri grandi per allenare la memoria senza affaticare la vista",
       "author": "Lorenzo Biondi",
       "price": "$9.99",
-      "category_id": "senior-large-print",
       "category": "Senior • Caratteri Grandi",
-      "badge": "Senior & Adulti • Caratteri Grandi",
-      "short_description": "101 passatempi rilassanti a caratteri grandi, studiati per mantenere attiva la memoria e la lucidità mentale in modo piacevole e senza affaticare la vista.",
-      "highlights": [
-        "Stampa ad alta leggibilità con caratteri grandi (Large Print) e griglie spaziose",
-        "Varietà equilibrata di giochi: Nonogrammi, Griglie Logiche, Sudoku, Kakuro e Cifrari",
-        "Tutte le soluzioni sono facilmente consultabili in fondo al volume"
+      "badge": "Caratteri Grandi (Large Print)",
+      "bullets": [
+        "Stampa grande ad alta leggibilità con griglie ampie e riposanti",
+        "Mix vario: Nonogrammi, Griglie Logiche, Sudoku, Kakuro e Cifrari con soluzioni"
       ],
-      "ideal_for": "Lettori senior, nonni o chiunque desideri un libro di passatempi chiaro, rilassante e comodo da leggere.",
-      "language_note": "Edizione in inglese (griglie logiche, numeriche e visive)",
       "amazon_url": "https://www.amazon.com/dp/B0HNLWQ5CK",
       "cover_url": "assets/covers/B0HNLWQ5CK.png",
       "preview_images": [
@@ -116,10 +43,55 @@
         "assets/previews/B0HNLWQ5CK_p2.png",
         "assets/previews/B0HNLWQ5CK_p3.png"
       ],
-      "page_count": 80,
-      "format": "Copertina flessibile",
-      "dimensions": "21,6 × 27,9 cm (Formato Grande)",
-      "pages": "80 pagine"
+      "format": "Copertina Flessibile",
+      "dimensions": "80 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "pages": "80 Pagine"
+    },
+    {
+      "asin": "B0GV339NJW",
+      "title": "ADHD Activity Book for Kids: 100 Focus Missions (3–5 Anni)",
+      "subtitle": "100 attività semplici e divertenti per sviluppare attenzione, calma e concentrazione nei più piccoli",
+      "author": "Lorenzo Biondi",
+      "price": "$8.73",
+      "category": "Bambini 3–5 Anni",
+      "badge": "Età 3–5 Anni • Scuola Materna",
+      "bullets": [
+        "100 giochi visivi: tracciati, labirinti semplici, differenze e forme",
+        "Studiato per bambini di 3–5 anni (non serve saper leggere)"
+      ],
+      "amazon_url": "https://www.amazon.com/dp/B0GV339NJW",
+      "cover_url": "assets/covers/B0GV339NJW.png",
+      "preview_images": [
+        "assets/previews/B0GV339NJW_p1.png",
+        "assets/previews/B0GV339NJW_p2.png",
+        "assets/previews/B0GV339NJW_p3.png"
+      ],
+      "format": "Copertina Flessibile",
+      "dimensions": "100 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "pages": "100 Pagine"
+    },
+    {
+      "asin": "B0GVF8HGMC",
+      "title": "ADHD Activity Book for Kids: 100 Focus Missions (6–7 Anni)",
+      "subtitle": "Labirinti, sequenze logiche, parole intrecciate e giochi per allenare la concentrazione a 6–7 anni",
+      "author": "Lorenzo Biondi",
+      "price": "$5.68",
+      "category": "Bambini 6–7 Anni",
+      "badge": "Età 6–7 Anni • Scuola Primaria",
+      "bullets": [
+        "100 missioni progressive: labirinti, sequenze, parole intrecciate e logica",
+        "Ideale per i primi anni delle elementari per imparare divertendosi"
+      ],
+      "amazon_url": "https://www.amazon.com/dp/B0GVF8HGMC",
+      "cover_url": "assets/covers/B0GVF8HGMC.png",
+      "preview_images": [
+        "assets/previews/B0GVF8HGMC_p1.png",
+        "assets/previews/B0GVF8HGMC_p2.png",
+        "assets/previews/B0GVF8HGMC_p3.png"
+      ],
+      "format": "Copertina Flessibile",
+      "dimensions": "100 Pagine • Grande Formato (21,6 × 27,9 cm)",
+      "pages": "100 Pagine"
     }
   ]
 }
