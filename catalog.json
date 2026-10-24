@@ -38,14 +38,10 @@
       ],
       "amazon_url": "https://www.amazon.com/dp/B0HNLWQ5CK",
       "cover_url": "assets/covers/B0HNLWQ5CK.png",
-      "preview_images": [
-        "assets/previews/B0HNLWQ5CK_p1.png",
-        "assets/previews/B0HNLWQ5CK_p2.png",
-        "assets/previews/B0HNLWQ5CK_p3.png"
-      ],
+      "preview_images": [],
       "format": "Copertina Flessibile",
-      "dimensions": "80 Pagine • Formato 21,6 × 27,9 cm",
-      "pages": "80 Pagine"
+      "dimensions": "100 Pagine • Formato 21,6 × 27,9 cm",
+      "pages": "100 Pagine"
     },
     {
       "asin": "B0GV339NJW",
