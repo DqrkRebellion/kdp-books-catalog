@@ -150,7 +150,7 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             font-size: 0.84rem;
             flex-shrink: 0;
         }
@@ -166,6 +166,126 @@
             color: #febd69;
             font-weight: 600;
             white-space: nowrap;
+        }
+
+        /* ----------------------------------------------------
+           LANGUAGE SELECTOR (Dropdown & Flag)
+        ---------------------------------------------------- */
+        .lang-selector-container {
+            position: relative;
+            z-index: 1050;
+        }
+
+        .lang-selector-btn {
+            background: #232f3e;
+            border: 1px solid #4a5b73;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            user-select: none;
+        }
+
+        .lang-selector-btn:hover {
+            border-color: var(--amz-orange);
+            background: #2f3e54;
+        }
+
+        .lang-flag {
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        .dropdown-chevron {
+            transition: transform 0.2s ease;
+        }
+
+        .lang-selector-container.open .dropdown-chevron {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: #ffffff;
+            color: #0f1111;
+            border-radius: 6px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+            min-width: 210px;
+            padding: 6px 0;
+            z-index: 2000;
+            display: none;
+            border: 1px solid #d5d9d9;
+        }
+
+        .lang-selector-container.open .lang-dropdown-menu {
+            display: block;
+        }
+
+        .lang-dropdown-header {
+            padding: 8px 14px 6px;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #565959;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #f0f2f2;
+        }
+
+        .lang-option {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 14px;
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: 0.88rem;
+            color: #0f1111;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.15s;
+        }
+
+        .lang-option-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-option:hover {
+            background: #f7fafa;
+            color: var(--amz-orange-dark);
+        }
+
+        .lang-option.active {
+            font-weight: 700;
+            background: #fff8eb;
+            color: #c45500;
+        }
+
+        .lang-option .check {
+            opacity: 0;
+            font-weight: 800;
+            color: #c45500;
+        }
+
+        .lang-option.active .check {
+            opacity: 1;
+        }
+
+        .lang-divider {
+            height: 1px;
+            background: #e7e7e7;
+            margin: 4px 0;
         }
 
         /* ----------------------------------------------------
@@ -810,6 +930,60 @@
             line-height: 1.5;
         }
 
+        .social-channels-section {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-section-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #febd69;
+            letter-spacing: 0.3px;
+        }
+
+        .social-links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #131921;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 600;
+            border: 1px solid #3a4b61;
+            transition: all 0.2s ease;
+        }
+
+        .social-link-btn:hover {
+            border-color: var(--amz-orange);
+            background: #232f3e;
+            color: var(--amz-orange);
+            transform: translateY(-1px);
+        }
+
+        .social-link-btn svg {
+            flex-shrink: 0;
+        }
+
         /* ----------------------------------------------------
            RESPONSIVE BREAKPOINTS (LAPTOP / TABLET / MOBILE)
         ---------------------------------------------------- */
@@ -826,7 +1000,14 @@
                 padding: 10px 16px;
                 gap: 10px;
             }
-            .header-actions {
+            .header-top-row {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            .badge-verified.desktop-only {
                 display: none;
             }
             .search-container {
@@ -912,15 +1093,59 @@
 
     <!-- Header Amazon Style -->
     <header class="amz-header">
-        <a href="#top" class="brand-logo-area">
-            <div class="brand-logo-circle">
-                <img src="assets/logo.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23ff9900\'/><text x=\'50\' y=\'65\' font-size=\'42\' font-weight=\'bold\' text-anchor=\'middle\' fill=\'%23131921\'>LB</text></svg>'" alt="Logo">
+        <div class="header-top-row">
+            <a href="#top" class="brand-logo-area">
+                <div class="brand-logo-circle">
+                    <img src="assets/logo.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23ff9900\'/><text x=\'50\' y=\'65\' font-size=\'42\' font-weight=\'bold\' text-anchor=\'middle\' fill=\'%23131921\'>LB</text></svg>'" alt="Logo">
+                </div>
+                <div>
+                    <div class="brand-title">PUZZLE PRESS <span class="accent">STORE</span></div>
+                    <div class="brand-subtitle" data-i18n="brandSubtitle">Catalogo Ufficiale Libri su Amazon</div>
+                </div>
+            </a>
+
+            <div class="header-actions">
+                <!-- Selettore di Lingua Intuitivo -->
+                <div class="lang-selector-container" id="langSelectorContainer">
+                    <button type="button" class="lang-selector-btn" id="langSelectorBtn" aria-expanded="false" aria-haspopup="true" aria-label="Seleziona lingua">
+                        <span class="lang-flag" id="activeLangFlag">🇮🇹</span>
+                        <span class="lang-code" id="activeLangCode">IT</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown-menu" id="langDropdown" role="menu">
+                        <div class="lang-dropdown-header" data-i18n="langSelectorHeader">Seleziona Lingua:</div>
+                        <button type="button" class="lang-option" data-lang="it" role="menuitem">
+                            <span class="lang-option-left">
+                                <span class="flag">🇮🇹</span>
+                                <span class="label">Italiano</span>
+                            </span>
+                            <span class="check">✓</span>
+                        </button>
+                        <button type="button" class="lang-option" data-lang="en" role="menuitem">
+                            <span class="lang-option-left">
+                                <span class="flag">🇬🇧</span>
+                                <span class="label">English</span>
+                            </span>
+                            <span class="check">✓</span>
+                        </button>
+                        <div class="lang-divider"></div>
+                        <button type="button" class="lang-option" data-lang="all" role="menuitem">
+                            <span class="lang-option-left">
+                                <span class="flag">🌐</span>
+                                <span class="label" data-i18n="allLanguagesLabel">Tutti i libri (Tutte le lingue)</span>
+                            </span>
+                            <span class="check">✓</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="badge-verified desktop-only" data-i18n="primeBadge">
+                    <span>✓</span> Disponibili con Amazon Prime
+                </div>
             </div>
-            <div>
-                <div class="brand-title">PUZZLE PRESS <span class="accent">STORE</span></div>
-                <div class="brand-subtitle">Catalogo Libri su Amazon</div>
-            </div>
-        </a>
+        </div>
 
         <div class="search-container">
             <input type="text" id="searchInput" class="search-input" placeholder="Cerca per età (3-5, 6-7, adulti, senior), sudoku, labirinti..." aria-label="Cerca libri">
@@ -930,33 +1155,27 @@
                 </svg>
             </span>
         </div>
-
-        <div class="header-actions">
-            <div class="badge-verified">
-                <span>✓</span> Disponibili con Amazon Prime
-            </div>
-        </div>
     </header>
 
     <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-inner">
             <div class="hero-text">
-                <h1>I Nostri Libri di Logica, Giochi e Attività</h1>
-                <p>Scegli il volume più adatto per bambini, adulti o senior, sfoglia un'anteprima delle pagine interne e acquista comodamente su Amazon con spedizione rapida.</p>
+                <h1 data-i18n="heroTitle">I Nostri Libri di Logica, Giochi e Attività</h1>
+                <p data-i18n="heroSubtitle">Scegli il volume più adatto per bambini, ragazzi, adulti o senior, sfoglia un'anteprima delle pagine interne e acquista comodamente su Amazon con spedizione rapida.</p>
             </div>
             <div class="hero-features">
                 <div class="feature-item">
                     <span class="icon">✓</span>
-                    <div>Spedizione Prime Gratuita</div>
+                    <div data-i18n="featurePrime">Spedizione Prime Gratuita</div>
                 </div>
                 <div class="feature-item">
                     <span class="icon">✓</span>
-                    <div>Grande Formato Comodo da Scrivere</div>
+                    <div data-i18n="featureFormat">Grande Formato Comodo da Scrivere</div>
                 </div>
                 <div class="feature-item">
                     <span class="icon">✓</span>
-                    <div>Anteprima Pagine Disponibile</div>
+                    <div data-i18n="featurePreview">Anteprima Pagine Disponibile</div>
                 </div>
             </div>
         </div>
@@ -966,15 +1185,15 @@
     <section class="filter-section">
         <div class="filter-inner">
             <div class="filter-buttons" id="categoryFilters">
-                <span class="filter-label">Scegli per chi:</span>
-                <button type="button" class="filter-btn active" data-filter="all">Tutti i Libri</button><button type="button" class="filter-btn" data-filter="Adulti • Logica">Adulti • Logica</button><button type="button" class="filter-btn" data-filter="Senior • Caratteri Grandi">Senior • Caratteri Grandi</button><button type="button" class="filter-btn" data-filter="Bambini 3–5 Anni">Bambini 3–5 Anni</button><button type="button" class="filter-btn" data-filter="Bambini 6–7 Anni">Bambini 6–7 Anni</button>
+                <span class="filter-label" data-i18n="filterLabel">Scegli per chi:</span>
+                <button type="button" class="filter-btn active" data-filter="all">Tutti i Libri</button><button type="button" class="filter-btn" data-filter="Adulti • Logica">Adulti • Logica</button><button type="button" class="filter-btn" data-filter="Ragazzi • Logica">Ragazzi • Logica</button><button type="button" class="filter-btn" data-filter="Adults • Logic">Adults • Logic</button><button type="button" class="filter-btn" data-filter="Seniors • Large Print">Seniors • Large Print</button><button type="button" class="filter-btn" data-filter="Kids 3–5 Years">Kids 3–5 Years</button><button type="button" class="filter-btn" data-filter="Kids 6–7 Years">Kids 6–7 Years</button>
             </div>
             <div class="sort-area">
-                <label for="sortSelect">Ordina per:</label>
+                <label for="sortSelect" data-i18n="sortLabel">Ordina per:</label>
                 <select id="sortSelect" class="sort-select">
-                    <option value="featured">Consigliati</option>
-                    <option value="price-asc">Prezzo: dal più basso</option>
-                    <option value="price-desc">Prezzo: dal più alto</option>
+                    <option value="featured" data-i18n="sortFeatured">Consigliati</option>
+                    <option value="price-asc" data-i18n="sortPriceAsc">Prezzo: dal più basso</option>
+                    <option value="price-desc" data-i18n="sortPriceDesc">Prezzo: dal più alto</option>
                 </select>
             </div>
         </div>
@@ -983,14 +1202,156 @@
     <!-- Main Container Card Libri -->
     <main class="catalog-container">
         <div class="results-count" id="resultsCount">
-            Visualizzazione di <strong>4 libri</strong> disponibili per l'acquisto immediato su Amazon
+            Visualizzazione di <strong>6 libri</strong> disponibili per l'acquisto immediato su Amazon
         </div>
 
         <div class="books-grid" id="booksGrid">
             
-        <article class="book-card" data-category="Adulti • Logica" data-title="100+ expert logic puzzles for adults oltre 100 sfide di logica tra sudoku, labirinti, griglie logiche, crittogrammi e ricerca parole adulti • logica per adulti • livello esperto" data-price="10.29 USD">
+        <article class="book-card" data-language="en" data-category="Adulti • Logica" data-title="mindful logic puzzle book for adults 100+ intricate puzzles for relaxation and focus (ages 18+) adulti • logica per adulti • livello esperto en" data-price="10.29">
             <div class="card-badge">
                 <span class="amazon-choice-badge">Per Adulti • Livello Esperto</span>
+            </div>
+            
+            <a href="https://www.amazon.com/dp/B0HPBYGHHH" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: Mindful Logic Puzzle Book for Adults">
+                <div class="book-3d">
+                    <img src="assets/covers/B0HPBYGHHH.png" alt="Mindful Logic Puzzle Book for Adults" loading="lazy" class="book-img">
+                    <div class="book-spine"></div>
+                    <div class="book-shadow"></div>
+                </div>
+            </a>
+
+            <div class="card-details">
+                <div class="category-tag">Adulti • Logica</div>
+                <h2 class="book-title">
+                    <a href="https://www.amazon.com/dp/B0HPBYGHHH" target="_blank" rel="noopener noreferrer" title="Mindful Logic Puzzle Book for Adults">Mindful Logic Puzzle Book for Adults</a>
+                </h2>
+                <p class="book-subtitle">100+ Intricate Puzzles for Relaxation and Focus (Ages 18+)</p>
+                <div class="book-author"><span class="author-prefix" data-i18n="byAuthor">di</span> <span class="author-name">Lorenzo Biondi</span></div>
+
+                <ul class="book-bullets">
+                    <li><span class="bullet-check">✓</span><span>Progressive challenges with full verified solutions included</span></li><li><span class="bullet-check">✓</span><span>Spacious 8.5&quot; x 11&quot; format comfortable to write in</span></li>
+                </ul>
+
+                <div class="card-bottom">
+                    <div class="price-row">
+                        <div class="amazon-price">
+                            <span class="price-symbol">$</span>
+                            <span class="price-whole">10</span>
+                            <span class="price-fraction">29</span>
+                        </div>
+                        <div class="prime-badge" title="Spedizione Prime Gratuita">
+                            <span class="prime-check">✓</span><span class="prime-text">prime</span>
+                        </div>
+                    </div>
+
+                    <div class="delivery-note" data-i18n="freeDelivery">
+                        Consegna GRATUITA e rapida con Amazon Prime
+                    </div>
+
+                    <div class="format-info">
+                        <span>Paperback</span> • <span>130 Pages • 8.5 × 11 in</span>
+                    </div>
+
+                    <div class="cta-wrapper">
+                        
+                <button type="button" class="look-inside-btn js-open-preview"
+                        data-title="Mindful Logic Puzzle Book for Adults"
+                        data-url="https://www.amazon.com/dp/B0HPBYGHHH"
+                        data-price="$10.29"
+                        data-lang="en"
+                        data-previews="[&quot;assets/previews/B0HPBYGHHH_p1.png&quot;, &quot;assets/previews/B0HPBYGHHH_p2.png&quot;, &quot;assets/previews/B0HPBYGHHH_p3.png&quot;]">
+                    <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+                        <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="look-inside-label" data-i18n="lookInside">Guarda dentro (3 pagine)</span>
+                </button>
+            
+                        <a href="https://www.amazon.com/dp/B0HPBYGHHH" target="_blank" rel="noopener noreferrer" class="amazon-btn">
+                            <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                            <span class="amazon-btn-label" data-i18n="buyAmazon">Acquista su Amazon</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="book-card" data-language="it" data-category="Ragazzi • Logica" data-title="100+ sfide di logica per giovani menti (età 8–12 anni) potenzia la mente dei ragazzi con giochi deduttivi, labirinti e sfide stimolanti ragazzi • logica età 8–12 anni • scuole medie it" data-price="9.49">
+            <div class="card-badge">
+                <span class="amazon-choice-badge">Età 8–12 Anni • Scuole Medie</span>
+            </div>
+            
+            <a href="https://www.amazon.it/dp/B0HP8VR7N6" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: 100+ Sfide di Logica per Giovani Menti (Età 8–12 Anni)">
+                <div class="book-3d">
+                    <img src="assets/covers/B0HP8VR7N6.png" alt="100+ Sfide di Logica per Giovani Menti (Età 8–12 Anni)" loading="lazy" class="book-img">
+                    <div class="book-spine"></div>
+                    <div class="book-shadow"></div>
+                </div>
+            </a>
+
+            <div class="card-details">
+                <div class="category-tag">Ragazzi • Logica</div>
+                <h2 class="book-title">
+                    <a href="https://www.amazon.it/dp/B0HP8VR7N6" target="_blank" rel="noopener noreferrer" title="100+ Sfide di Logica per Giovani Menti (Età 8–12 Anni)">100+ Sfide di Logica per Giovani Menti (Età 8–12 Anni)</a>
+                </h2>
+                <p class="book-subtitle">Potenzia la mente dei ragazzi con giochi deduttivi, labirinti e sfide stimolanti</p>
+                <div class="book-author"><span class="author-prefix" data-i18n="byAuthor">di</span> <span class="author-name">Lorenzo Biondi</span></div>
+
+                <ul class="book-bullets">
+                    <li><span class="bullet-check">✓</span><span>Oltre 100 sfide progressive: Labirinti, Sudoku, Griglie Logiche, Crittogrammi e Parole</span></li><li><span class="bullet-check">✓</span><span>Schede di deduzione guidata e soluzioni complete e verificate a fine volume</span></li>
+                </ul>
+
+                <div class="card-bottom">
+                    <div class="price-row">
+                        <div class="amazon-price">
+                            <span class="price-symbol">€</span>
+                            <span class="price-whole">9</span>
+                            <span class="price-fraction">49</span>
+                        </div>
+                        <div class="prime-badge" title="Spedizione Prime Gratuita">
+                            <span class="prime-check">✓</span><span class="prime-text">prime</span>
+                        </div>
+                    </div>
+
+                    <div class="delivery-note" data-i18n="freeDelivery">
+                        Consegna GRATUITA e rapida con Amazon Prime
+                    </div>
+
+                    <div class="format-info">
+                        <span>Copertina Flessibile</span> • <span>130 Pagine • Formato 21,6 × 27,9 cm</span>
+                    </div>
+
+                    <div class="cta-wrapper">
+                        
+                <button type="button" class="look-inside-btn js-open-preview"
+                        data-title="100+ Sfide di Logica per Giovani Menti (Età 8–12 Anni)"
+                        data-url="https://www.amazon.it/dp/B0HP8VR7N6"
+                        data-price="€9.49"
+                        data-lang="it"
+                        data-previews="[&quot;assets/previews/B0HP8VR7N6_p1.png&quot;, &quot;assets/previews/B0HP8VR7N6_p2.png&quot;, &quot;assets/previews/B0HP8VR7N6_p3.png&quot;]">
+                    <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+                        <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="look-inside-label" data-i18n="lookInside">Guarda dentro (3 pagine)</span>
+                </button>
+            
+                        <a href="https://www.amazon.it/dp/B0HP8VR7N6" target="_blank" rel="noopener noreferrer" class="amazon-btn">
+                            <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                            <span class="amazon-btn-label" data-i18n="buyAmazon">Acquista su Amazon</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="book-card" data-language="en" data-category="Adults • Logic" data-title="100+ expert logic puzzles for adults master unique challenges with mazes, sudoku, logic grids, cryptograms and word searches adults • logic for adults • expert level en" data-price="10.29">
+            <div class="card-badge">
+                <span class="amazon-choice-badge">For Adults • Expert Level</span>
             </div>
             
             <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: 100+ Expert Logic Puzzles for Adults">
@@ -1002,15 +1363,15 @@
             </a>
 
             <div class="card-details">
-                <div class="category-tag">Adulti • Logica</div>
+                <div class="category-tag">Adults • Logic</div>
                 <h2 class="book-title">
                     <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" title="100+ Expert Logic Puzzles for Adults">100+ Expert Logic Puzzles for Adults</a>
                 </h2>
-                <p class="book-subtitle">Oltre 100 sfide di logica tra Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Ricerca Parole</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
+                <p class="book-subtitle">Master Unique Challenges with Mazes, Sudoku, Logic Grids, Cryptograms and Word Searches</p>
+                <div class="book-author"><span class="author-prefix" data-i18n="byAuthor">di</span> <span class="author-name">Lorenzo Biondi</span></div>
 
                 <ul class="book-bullets">
-                    <li><span class="bullet-check">✓</span><span>5 giochi: Sudoku, Labirinti, Griglie Logiche, Crittogrammi e Parole</span></li><li><span class="bullet-check">✓</span><span>Spazio appunti su ogni pagina e soluzioni complete a fine libro</span></li>
+                    <li><span class="bullet-check">✓</span><span>5 distinctive puzzles: Sudoku, Mazes, Logic Grids, Cryptograms &amp; Word Searches</span></li><li><span class="bullet-check">✓</span><span>Spacious deduction worksheets with full verified solutions at the back</span></li>
                 </ul>
 
                 <div class="card-bottom">
@@ -1018,19 +1379,19 @@
                         <div class="amazon-price">
                             <span class="price-symbol">$</span>
                             <span class="price-whole">10</span>
-                            <span class="price-fraction">29 USD</span>
+                            <span class="price-fraction">29</span>
                         </div>
                         <div class="prime-badge" title="Spedizione Prime Gratuita">
                             <span class="prime-check">✓</span><span class="prime-text">prime</span>
                         </div>
                     </div>
 
-                    <div class="delivery-note">
+                    <div class="delivery-note" data-i18n="freeDelivery">
                         Consegna GRATUITA e rapida con Amazon Prime
                     </div>
 
                     <div class="format-info">
-                        <span>Copertina Flessibile</span> • <span>130 Pagine • Formato 21,6 × 27,9 cm</span>
+                        <span>Paperback</span> • <span>130 Pages • 8.5 × 11 in</span>
                     </div>
 
                     <div class="cta-wrapper">
@@ -1038,29 +1399,30 @@
                 <button type="button" class="look-inside-btn js-open-preview"
                         data-title="100+ Expert Logic Puzzles for Adults"
                         data-url="https://www.amazon.com/dp/B0HNPC6XF2"
-                        data-price="$10.29 USD"
+                        data-price="$10.29"
+                        data-lang="en"
                         data-previews="[&quot;assets/previews/B0HNPC6XF2_p1.png&quot;, &quot;assets/previews/B0HNPC6XF2_p2.png&quot;, &quot;assets/previews/B0HNPC6XF2_p3.png&quot;]">
                     <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
                         <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
                         <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
                     </svg>
-                    <span>Guarda dentro (3 pagine)</span>
+                    <span class="look-inside-label" data-i18n="lookInside">Guarda dentro (3 pagine)</span>
                 </button>
             
                         <a href="https://www.amazon.com/dp/B0HNPC6XF2" target="_blank" rel="noopener noreferrer" class="amazon-btn">
                             <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                                 <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                             </svg>
-                            <span>Acquista su Amazon</span>
+                            <span class="amazon-btn-label" data-i18n="buyAmazon">Acquista su Amazon</span>
                         </a>
                     </div>
                 </div>
             </div>
         </article>
         
-        <article class="book-card" data-category="Senior • Caratteri Grandi" data-title="101 mindful puzzles for seniors (large print) 101 passatempi rilassanti a caratteri grandi per allenare la memoria senza affaticare la vista senior • caratteri grandi caratteri grandi (large print)" data-price="9.99 USD">
+        <article class="book-card" data-language="en" data-category="Seniors • Large Print" data-title="101 mindful puzzles for seniors (large print) 101 calming large-print puzzles to train memory and focus without eye strain seniors • large print large print edition en" data-price="9.99">
             <div class="card-badge">
-                <span class="amazon-choice-badge">Caratteri Grandi (Large Print)</span>
+                <span class="amazon-choice-badge">Large Print Edition</span>
             </div>
             
             <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: 101 Mindful Puzzles for Seniors (Large Print)">
@@ -1072,15 +1434,15 @@
             </a>
 
             <div class="card-details">
-                <div class="category-tag">Senior • Caratteri Grandi</div>
+                <div class="category-tag">Seniors • Large Print</div>
                 <h2 class="book-title">
                     <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" title="101 Mindful Puzzles for Seniors (Large Print)">101 Mindful Puzzles for Seniors (Large Print)</a>
                 </h2>
-                <p class="book-subtitle">101 passatempi rilassanti a caratteri grandi per allenare la memoria senza affaticare la vista</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
+                <p class="book-subtitle">101 Calming Large-Print Puzzles to Train Memory and Focus Without Eye Strain</p>
+                <div class="book-author"><span class="author-prefix" data-i18n="byAuthor">di</span> <span class="author-name">Lorenzo Biondi</span></div>
 
                 <ul class="book-bullets">
-                    <li><span class="bullet-check">✓</span><span>Stampa grande ad alta leggibilità con griglie ampie e riposanti</span></li><li><span class="bullet-check">✓</span><span>Nonogrammi, Griglie Logiche, Sudoku, Kakuro e Cifrari con soluzioni</span></li>
+                    <li><span class="bullet-check">✓</span><span>Extra-large high-contrast print with spacious, comfortable grids</span></li><li><span class="bullet-check">✓</span><span>Nonograms, Logic Grids, Sudoku, Kakuro and Ciphers with full answer keys</span></li>
                 </ul>
 
                 <div class="card-bottom">
@@ -1088,19 +1450,19 @@
                         <div class="amazon-price">
                             <span class="price-symbol">$</span>
                             <span class="price-whole">9</span>
-                            <span class="price-fraction">99 USD</span>
+                            <span class="price-fraction">99</span>
                         </div>
                         <div class="prime-badge" title="Spedizione Prime Gratuita">
                             <span class="prime-check">✓</span><span class="prime-text">prime</span>
                         </div>
                     </div>
 
-                    <div class="delivery-note">
+                    <div class="delivery-note" data-i18n="freeDelivery">
                         Consegna GRATUITA e rapida con Amazon Prime
                     </div>
 
                     <div class="format-info">
-                        <span>Copertina Flessibile</span> • <span>80 Pagine • Formato 21,6 × 27,9 cm</span>
+                        <span>Paperback</span> • <span>80 Pages • 8.5 × 11 in</span>
                     </div>
 
                     <div class="cta-wrapper">
@@ -1108,49 +1470,50 @@
                 <button type="button" class="look-inside-btn js-open-preview"
                         data-title="101 Mindful Puzzles for Seniors (Large Print)"
                         data-url="https://www.amazon.com/dp/B0HNLWQ5CK"
-                        data-price="$9.99 USD"
+                        data-price="$9.99"
+                        data-lang="en"
                         data-previews="[&quot;assets/previews/B0HNLWQ5CK_p1.png&quot;, &quot;assets/previews/B0HNLWQ5CK_p2.png&quot;, &quot;assets/previews/B0HNLWQ5CK_p3.png&quot;]">
                     <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
                         <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
                         <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
                     </svg>
-                    <span>Guarda dentro (3 pagine)</span>
+                    <span class="look-inside-label" data-i18n="lookInside">Guarda dentro (3 pagine)</span>
                 </button>
             
                         <a href="https://www.amazon.com/dp/B0HNLWQ5CK" target="_blank" rel="noopener noreferrer" class="amazon-btn">
                             <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                                 <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                             </svg>
-                            <span>Acquista su Amazon</span>
+                            <span class="amazon-btn-label" data-i18n="buyAmazon">Acquista su Amazon</span>
                         </a>
                     </div>
                 </div>
             </div>
         </article>
         
-        <article class="book-card" data-category="Bambini 3–5 Anni" data-title="adhd activity book for kids: 100 focus missions (3–5 anni) 100 attività semplici e divertenti per sviluppare attenzione, calma e concentrazione nei più piccoli bambini 3–5 anni età 3–5 anni • scuola materna" data-price="8.73 USD">
+        <article class="book-card" data-language="en" data-category="Kids 3–5 Years" data-title="adhd activity book for kids: 100 focus missions (ages 3–5) 100 simple and engaging visual missions to strengthen attention, calm, and focus in little ones kids 3–5 years ages 3–5 • preschool en" data-price="8.73">
             <div class="card-badge">
-                <span class="amazon-choice-badge">Età 3–5 Anni • Scuola Materna</span>
+                <span class="amazon-choice-badge">Ages 3–5 • Preschool</span>
             </div>
             
-            <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: ADHD Activity Book for Kids: 100 Focus Missions (3–5 Anni)">
+            <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: ADHD Activity Book for Kids: 100 Focus Missions (Ages 3–5)">
                 <div class="book-3d">
-                    <img src="assets/covers/B0GV339NJW.png" alt="ADHD Activity Book for Kids: 100 Focus Missions (3–5 Anni)" loading="lazy" class="book-img">
+                    <img src="assets/covers/B0GV339NJW.png" alt="ADHD Activity Book for Kids: 100 Focus Missions (Ages 3–5)" loading="lazy" class="book-img">
                     <div class="book-spine"></div>
                     <div class="book-shadow"></div>
                 </div>
             </a>
 
             <div class="card-details">
-                <div class="category-tag">Bambini 3–5 Anni</div>
+                <div class="category-tag">Kids 3–5 Years</div>
                 <h2 class="book-title">
-                    <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" title="ADHD Activity Book for Kids: 100 Focus Missions (3–5 Anni)">ADHD Activity Book for Kids: 100 Focus Missions (3–5 Anni)</a>
+                    <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" title="ADHD Activity Book for Kids: 100 Focus Missions (Ages 3–5)">ADHD Activity Book for Kids: 100 Focus Missions (Ages 3–5)</a>
                 </h2>
-                <p class="book-subtitle">100 attività semplici e divertenti per sviluppare attenzione, calma e concentrazione nei più piccoli</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
+                <p class="book-subtitle">100 Simple and Engaging Visual Missions to Strengthen Attention, Calm, and Focus in Little Ones</p>
+                <div class="book-author"><span class="author-prefix" data-i18n="byAuthor">di</span> <span class="author-name">Lorenzo Biondi</span></div>
 
                 <ul class="book-bullets">
-                    <li><span class="bullet-check">✓</span><span>100 giochi visivi: tracciati, labirinti semplici, differenze e forme</span></li><li><span class="bullet-check">✓</span><span>Studiato per bambini di 3–5 anni (non richiede di saper leggere)</span></li>
+                    <li><span class="bullet-check">✓</span><span>100 visual games: tracing, gentle mazes, shadow matching, and shapes</span></li><li><span class="bullet-check">✓</span><span>Engineered for toddlers and preschoolers (no reading required)</span></li>
                 </ul>
 
                 <div class="card-bottom">
@@ -1158,69 +1521,70 @@
                         <div class="amazon-price">
                             <span class="price-symbol">$</span>
                             <span class="price-whole">8</span>
-                            <span class="price-fraction">73 USD</span>
+                            <span class="price-fraction">73</span>
                         </div>
                         <div class="prime-badge" title="Spedizione Prime Gratuita">
                             <span class="prime-check">✓</span><span class="prime-text">prime</span>
                         </div>
                     </div>
 
-                    <div class="delivery-note">
+                    <div class="delivery-note" data-i18n="freeDelivery">
                         Consegna GRATUITA e rapida con Amazon Prime
                     </div>
 
                     <div class="format-info">
-                        <span>Copertina Flessibile</span> • <span>100 Pagine • Formato 21,6 × 27,9 cm</span>
+                        <span>Paperback</span> • <span>100 Pages • 8.5 × 11 in</span>
                     </div>
 
                     <div class="cta-wrapper">
                         
                 <button type="button" class="look-inside-btn js-open-preview"
-                        data-title="ADHD Activity Book for Kids: 100 Focus Missions (3–5 Anni)"
+                        data-title="ADHD Activity Book for Kids: 100 Focus Missions (Ages 3–5)"
                         data-url="https://www.amazon.com/dp/B0GV339NJW"
-                        data-price="$8.73 USD"
+                        data-price="$8.73"
+                        data-lang="en"
                         data-previews="[&quot;assets/previews/B0GV339NJW_p1.png&quot;, &quot;assets/previews/B0GV339NJW_p2.png&quot;, &quot;assets/previews/B0GV339NJW_p3.png&quot;]">
                     <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
                         <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
                         <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
                     </svg>
-                    <span>Guarda dentro (3 pagine)</span>
+                    <span class="look-inside-label" data-i18n="lookInside">Guarda dentro (3 pagine)</span>
                 </button>
             
                         <a href="https://www.amazon.com/dp/B0GV339NJW" target="_blank" rel="noopener noreferrer" class="amazon-btn">
                             <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                                 <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                             </svg>
-                            <span>Acquista su Amazon</span>
+                            <span class="amazon-btn-label" data-i18n="buyAmazon">Acquista su Amazon</span>
                         </a>
                     </div>
                 </div>
             </div>
         </article>
         
-        <article class="book-card" data-category="Bambini 6–7 Anni" data-title="adhd activity book for kids: 100 focus missions (6–7 anni) labirinti, sequenze logiche, parole intrecciate e giochi per allenare la concentrazione a 6–7 anni bambini 6–7 anni età 6–7 anni • scuola primaria" data-price="5.68 USD">
+        <article class="book-card" data-language="en" data-category="Kids 6–7 Years" data-title="adhd activity book for kids: 100 focus missions (ages 6–7) mazes, logic sequences, word searches, and brain games to build focus and attention at ages 6–7 kids 6–7 years ages 6–7 • elementary en" data-price="5.68">
             <div class="card-badge">
-                <span class="amazon-choice-badge">Età 6–7 Anni • Scuola Primaria</span>
+                <span class="amazon-choice-badge">Ages 6–7 • Elementary</span>
             </div>
             
-            <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: ADHD Activity Book for Kids: 100 Focus Missions (6–7 Anni)">
+            <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="cover-wrapper" title="Visualizza su Amazon: ADHD Activity Book for Kids: 100 Focus Missions (Ages 6–7)">
                 <div class="book-3d">
-                    <img src="assets/covers/B0GVF8HGMC.png" alt="ADHD Activity Book for Kids: 100 Focus Missions (6–7 Anni)" loading="lazy" class="book-img">
+                    <img src="assets/covers/B0GVF8HGMC.png" alt="ADHD Activity Book for Kids: 100 Focus Missions (Ages 6–7)" loading="lazy" class="book-img">
                     <div class="book-spine"></div>
                     <div class="book-shadow"></div>
                 </div>
             </a>
 
             <div class="card-details">
-                <div class="category-tag">Bambini 6–7 Anni</div>
+                <div class="category-tag">Kids 6–7 Years</div>
                 <h2 class="book-title">
-                    <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" title="ADHD Activity Book for Kids: 100 Focus Missions (6–7 Anni)">ADHD Activity Book for Kids: 100 Focus Missions (6–7 Anni)</a>
+                    <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" title="ADHD Activity Book for Kids: 100 Focus Missions (Ages 6–7)">ADHD Activity Book for Kids: 100 Focus Missions (Ages 6–7)</a>
                 </h2>
-                <p class="book-subtitle">Labirinti, sequenze logiche, parole intrecciate e giochi per allenare la concentrazione a 6–7 anni</p>
-                <div class="book-author">di <span class="author-name">Lorenzo Biondi</span></div>
+                <p class="book-subtitle">Mazes, Logic Sequences, Word Searches, and Brain Games to Build Focus and Attention at Ages 6–7</p>
+                <div class="book-author"><span class="author-prefix" data-i18n="byAuthor">di</span> <span class="author-name">Lorenzo Biondi</span></div>
 
                 <ul class="book-bullets">
-                    <li><span class="bullet-check">✓</span><span>100 missioni progressive: labirinti, sequenze, parole e logica</span></li><li><span class="bullet-check">✓</span><span>Ideale per i primi anni delle elementari per imparare giocando</span></li>
+                    <li><span class="bullet-check">✓</span><span>100 progressive missions: labyrinths, sequences, word puzzles, and logic</span></li><li><span class="bullet-check">✓</span><span>Perfect for early elementary school to build confidence and cognitive calm</span></li>
                 </ul>
 
                 <div class="card-bottom">
@@ -1228,40 +1592,41 @@
                         <div class="amazon-price">
                             <span class="price-symbol">$</span>
                             <span class="price-whole">5</span>
-                            <span class="price-fraction">68 USD</span>
+                            <span class="price-fraction">68</span>
                         </div>
                         <div class="prime-badge" title="Spedizione Prime Gratuita">
                             <span class="prime-check">✓</span><span class="prime-text">prime</span>
                         </div>
                     </div>
 
-                    <div class="delivery-note">
+                    <div class="delivery-note" data-i18n="freeDelivery">
                         Consegna GRATUITA e rapida con Amazon Prime
                     </div>
 
                     <div class="format-info">
-                        <span>Copertina Flessibile</span> • <span>100 Pagine • Formato 21,6 × 27,9 cm</span>
+                        <span>Paperback</span> • <span>100 Pages • 8.5 × 11 in</span>
                     </div>
 
                     <div class="cta-wrapper">
                         
                 <button type="button" class="look-inside-btn js-open-preview"
-                        data-title="ADHD Activity Book for Kids: 100 Focus Missions (6–7 Anni)"
+                        data-title="ADHD Activity Book for Kids: 100 Focus Missions (Ages 6–7)"
                         data-url="https://www.amazon.com/dp/B0GVF8HGMC"
-                        data-price="$5.68 USD"
+                        data-price="$5.68"
+                        data-lang="en"
                         data-previews="[&quot;assets/previews/B0GVF8HGMC_p1.png&quot;, &quot;assets/previews/B0GVF8HGMC_p2.png&quot;, &quot;assets/previews/B0GVF8HGMC_p3.png&quot;]">
                     <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
                         <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
                         <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
                     </svg>
-                    <span>Guarda dentro (3 pagine)</span>
+                    <span class="look-inside-label" data-i18n="lookInside">Guarda dentro (3 pagine)</span>
                 </button>
             
                         <a href="https://www.amazon.com/dp/B0GVF8HGMC" target="_blank" rel="noopener noreferrer" class="amazon-btn">
                             <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                                 <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                             </svg>
-                            <span>Acquista su Amazon</span>
+                            <span class="amazon-btn-label" data-i18n="buyAmazon">Acquista su Amazon</span>
                         </a>
                     </div>
                 </div>
@@ -1287,7 +1652,7 @@
                     <svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                         <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                     </svg>
-                    <span>Acquista ora su Amazon</span>
+                    <span data-i18n="buyNowModal">Acquista ora su Amazon</span>
                 </a>
             </div>
         </div>
@@ -1296,11 +1661,16 @@
     <!-- Footer Amazon Store -->
     <footer class="amz-footer">
         <div class="footer-inner">
-            <div class="footer-links">
-                <a href="#top">Torna a inizio pagina ↑</a>
-                <a href="https://www.amazon.com" target="_blank" rel="noopener">Vai su Amazon</a>
+            <div class="social-channels-section">
+                <div class="social-section-title" id="socialSectionTitle" data-i18n="socialTitle">Canali Social Ufficiali (Italia):</div>
+                <div class="social-links-grid" id="socialLinksGrid"></div>
             </div>
-            <div class="footer-disclaimer">
+
+            <div class="footer-links">
+                <a href="#top" data-i18n="backToTop">Torna a inizio pagina ↑</a>
+                <a href="https://www.amazon.com" target="_blank" rel="noopener" data-i18n="visitAmazon">Vai su Amazon</a>
+            </div>
+            <div class="footer-disclaimer" data-i18n="disclaimer">
                 Tutti i libri presenti in questo catalogo sono pubblicazioni originali di Lorenzo Biondi, stampate e spedite direttamente da Amazon. Amazon, Amazon Prime e i rispettivi loghi sono marchi registrati di Amazon.com, Inc. o delle sue affiliate. Cliccando su ciascun volume verrai reindirizzato direttamente alla pagina ufficiale del prodotto su Amazon per completare l'ordine in totale sicurezza.
             </div>
         </div>
@@ -1309,26 +1679,271 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('searchInput');
-            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categoryFiltersContainer = document.getElementById('categoryFilters');
             const sortSelect = document.getElementById('sortSelect');
             const booksGrid = document.getElementById('booksGrid');
             const resultsCount = document.getElementById('resultsCount');
             const cards = Array.from(document.querySelectorAll('.book-card'));
 
+            // Language Selector Elements
+            const langContainer = document.getElementById('langSelectorContainer');
+            const langBtn = document.getElementById('langSelectorBtn');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const activeFlag = document.getElementById('activeLangFlag');
+            const activeCode = document.getElementById('activeLangCode');
+
+            // Social Elements
+            const socialGrid = document.getElementById('socialLinksGrid');
+            const socialTitle = document.getElementById('socialSectionTitle');
+
+            // State
+            let currentLang = 'it';
             let currentCategory = 'all';
             let currentSearch = '';
 
+            const I18N = {
+                it: {
+                    pageTitle: "Puzzle Press Store • Catalogo Libri su Amazon",
+                    brandSubtitle: "Catalogo Ufficiale Libri su Amazon",
+                    searchPlaceholder: "Cerca per età (bambini, ragazzi, adulti, senior), sudoku, labirinti...",
+                    primeBadge: "✓ Disponibili con Amazon Prime",
+                    heroTitle: "I Nostri Libri di Logica, Giochi e Attività",
+                    heroSubtitle: "Scegli il volume più adatto per bambini, ragazzi, adulti o senior, sfoglia un'anteprima delle pagine interne e acquista comodamente su Amazon con spedizione rapida.",
+                    featurePrime: "Spedizione Prime Gratuita",
+                    featureFormat: "Grande Formato Comodo da Scrivere",
+                    featurePreview: "Anteprima Pagine Disponibile",
+                    filterLabel: "Scegli per chi:",
+                    allBooksCategory: "Tutti i Libri",
+                    sortLabel: "Ordina per:",
+                    sortFeatured: "Consigliati",
+                    sortPriceAsc: "Prezzo: dal più basso",
+                    sortPriceDesc: "Prezzo: dal più alto",
+                    resultsPrefix: "Visualizzazione di",
+                    resultsSuffix: "disponibili per l'acquisto immediato su Amazon",
+                    resultsLanguageNote: "in lingua italiana",
+                    lookInside: "Guarda dentro (3 pagine)",
+                    buyAmazon: "Acquista su Amazon",
+                    freeDelivery: "Consegna GRATUITA e rapida con Amazon Prime",
+                    byAuthor: "di",
+                    modalTitle: "Anteprima Pagine Interne:",
+                    modalClose: "Chiudi",
+                    samplePage: "Esempio pagina",
+                    priceLabel: "Prezzo Amazon:",
+                    buyNowModal: "Acquista ora su Amazon",
+                    backToTop: "Torna a inizio pagina ↑",
+                    visitAmazon: "Vai su Amazon",
+                    disclaimer: "Tutti i libri presenti in questo catalogo sono pubblicazioni originali di Lorenzo Biondi, stampate e spedite direttamente da Amazon. Amazon, Amazon Prime e i rispettivi loghi sono marchi registrati di Amazon.com, Inc. o delle sue affiliate. Cliccando su ciascun volume verrai reindirizzato direttamente alla pagina ufficiale del prodotto su Amazon per completare l'ordine in totale sicurezza.",
+                    socialTitle: "Canali Social Ufficiali (Italia):",
+                    langSelectorHeader: "Seleziona Lingua:",
+                    allLanguagesLabel: "Tutti i libri (Tutte le lingue)",
+                    emptyResults: "Nessun libro trovato per la lingua o i filtri selezionati."
+                },
+                en: {
+                    pageTitle: "Puzzle Press Store • Amazon Books Showcase",
+                    brandSubtitle: "Official Amazon Books Catalog",
+                    searchPlaceholder: "Search by age (kids, teens, adults, seniors), sudoku, mazes...",
+                    primeBadge: "✓ Available with Amazon Prime",
+                    heroTitle: "Premium Logic Puzzles & Activity Books",
+                    heroSubtitle: "Find the ideal collection for children, teens, adults, or seniors. Preview authentic interior pages and order directly on Amazon with fast Prime shipping.",
+                    featurePrime: "Free Fast Prime Delivery",
+                    featureFormat: "Large 8.5 x 11 Format Easy to Write",
+                    featurePreview: "Real Interior Page Previews",
+                    filterLabel: "Browse by target:",
+                    allBooksCategory: "All Books",
+                    sortLabel: "Sort by:",
+                    sortFeatured: "Featured",
+                    sortPriceAsc: "Price: Low to High",
+                    sortPriceDesc: "Price: High to Low",
+                    resultsPrefix: "Showing",
+                    resultsSuffix: "available for immediate order on Amazon",
+                    resultsLanguageNote: "in English",
+                    lookInside: "Look Inside (3 pages)",
+                    buyAmazon: "Buy on Amazon",
+                    freeDelivery: "FREE Fast Delivery with Amazon Prime",
+                    byAuthor: "by",
+                    modalTitle: "Interior Book Preview:",
+                    modalClose: "Close",
+                    samplePage: "Sample page",
+                    priceLabel: "Amazon Price:",
+                    buyNowModal: "Buy now on Amazon",
+                    backToTop: "Back to top ↑",
+                    visitAmazon: "Visit Amazon",
+                    disclaimer: "All books featured in this catalog are original publications by Lorenzo Biondi, printed and shipped directly by Amazon. Amazon, Amazon Prime and related logos are trademarks of Amazon.com, Inc. or its affiliates. Clicking on any book will take you directly to the official product page on Amazon to complete your secure checkout.",
+                    socialTitle: "Official Social Channels (Global):",
+                    langSelectorHeader: "Select Language:",
+                    allLanguagesLabel: "All books (All languages)",
+                    emptyResults: "No books found matching the selected language or filters."
+                }
+            };
+
+            const SOCIAL_PROFILES = {
+                it: [
+                    {
+                        name: "TikTok Italia",
+                        url: "https://www.tiktok.com/@lorenzobiondi.libri",
+                        handle: "@lorenzobiondi.libri",
+                        svg: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.29 0 .58.04.86.12V9.42a6.34 6.34 0 00-.86-.06 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.08a8.28 8.28 0 004.77 1.51V7.14a4.84 4.84 0 01-1-.45z"/></svg>`
+                    },
+                    {
+                        name: "Instagram Italia",
+                        url: "https://www.instagram.com/lorenzobiondi.libri",
+                        handle: "@lorenzobiondi.libri",
+                        svg: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`
+                    }
+                ],
+                en: [
+                    {
+                        name: "TikTok Global",
+                        url: "https://www.tiktok.com/@puzzlepress.books",
+                        handle: "@puzzlepress.books",
+                        svg: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.29 0 .58.04.86.12V9.42a6.34 6.34 0 00-.86-.06 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.08a8.28 8.28 0 004.77 1.51V7.14a4.84 4.84 0 01-1-.45z"/></svg>`
+                    },
+                    {
+                        name: "Instagram Global",
+                        url: "https://www.instagram.com/puzzlepress.books",
+                        handle: "@puzzlepress.books",
+                        svg: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`
+                    }
+                ]
+            };
+
+            function getInitialLanguage() {
+                const params = new URLSearchParams(window.location.search);
+                const urlLang = params.get('lang') || params.get('language');
+                if (urlLang && ['it', 'en', 'all'].includes(urlLang.toLowerCase())) {
+                    return urlLang.toLowerCase();
+                }
+
+                const hash = (window.location.hash || '').replace('#', '').toLowerCase();
+                if (['it', 'en'].includes(hash)) {
+                    return hash;
+                }
+
+                const saved = localStorage.getItem('kdp_catalog_lang');
+                if (saved && ['it', 'en', 'all'].includes(saved.toLowerCase())) {
+                    return saved.toLowerCase();
+                }
+
+                const browserLangs = navigator.languages || [navigator.language || ''];
+                for (const l of browserLangs) {
+                    if (!l) continue;
+                    const code = l.toLowerCase();
+                    if (code.startsWith('it')) return 'it';
+                    if (code.startsWith('en')) return 'en';
+                }
+
+                return 'it';
+            }
+
+            function applyTranslations(lang) {
+                const dict = I18N[lang] || I18N['en'];
+                document.title = dict.pageTitle;
+                document.documentElement.lang = (lang === 'all' ? 'it' : lang);
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) {
+                        if (el.tagName === 'INPUT') {
+                            el.placeholder = dict[key];
+                        } else {
+                            el.textContent = dict[key];
+                        }
+                    }
+                });
+
+                // Search input placeholder
+                if (searchInput) {
+                    searchInput.placeholder = dict.searchPlaceholder;
+                }
+            }
+
+            function updateSocialLinks(lang) {
+                const targetLang = (lang === 'all' || !SOCIAL_PROFILES[lang]) ? 'it' : lang;
+                const profiles = SOCIAL_PROFILES[targetLang] || [];
+                const dict = I18N[targetLang] || I18N['en'];
+
+                if (socialTitle) {
+                    socialTitle.textContent = dict.socialTitle;
+                }
+
+                if (socialGrid) {
+                    socialGrid.innerHTML = '';
+                    profiles.forEach(p => {
+                        const a = document.createElement('a');
+                        a.href = p.url;
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.className = 'social-link-btn';
+                        a.innerHTML = `${p.svg}<span>${p.name} (${p.handle})</span>`;
+                        socialGrid.appendChild(a);
+                    });
+                }
+            }
+
+            function renderCategoryFilters(lang) {
+                const dict = I18N[lang] || I18N['en'];
+                const matchingCards = cards.filter(card => {
+                    return lang === 'all' || card.getAttribute('data-language') === lang;
+                });
+
+                const catSet = new Set();
+                matchingCards.forEach(card => {
+                    const cat = card.getAttribute('data-category');
+                    if (cat) catSet.add(cat);
+                });
+
+                categoryFiltersContainer.innerHTML = '';
+
+                const labelSpan = document.createElement('span');
+                labelSpan.className = 'filter-label';
+                labelSpan.textContent = dict.filterLabel;
+                categoryFiltersContainer.appendChild(labelSpan);
+
+                // Bottone Tutti
+                const allBtn = document.createElement('button');
+                allBtn.type = 'button';
+                allBtn.className = 'filter-btn' + (currentCategory === 'all' ? ' active' : '');
+                allBtn.setAttribute('data-filter', 'all');
+                allBtn.textContent = dict.allBooksCategory;
+                allBtn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    allBtn.classList.add('active');
+                    currentCategory = 'all';
+                    updateDisplay();
+                });
+                categoryFiltersContainer.appendChild(allBtn);
+
+                // Bottoni Categorie
+                catSet.forEach(cat => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'filter-btn' + (currentCategory === cat ? ' active' : '');
+                    btn.setAttribute('data-filter', cat);
+                    btn.textContent = cat;
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        currentCategory = cat;
+                        updateDisplay();
+                    });
+                    categoryFiltersContainer.appendChild(btn);
+                });
+            }
+
             function updateDisplay() {
+                const dict = I18N[currentLang] || I18N['en'];
                 let visibleCount = 0;
 
                 cards.forEach(card => {
-                    const cardCat = card.getAttribute('data-category');
+                    const cardLang = card.getAttribute('data-language') || 'it';
+                    const cardCat = card.getAttribute('data-category') || '';
                     const cardTitle = card.getAttribute('data-title') || '';
-                    
+
+                    const matchLang = (currentLang === 'all' || cardLang === currentLang);
                     const matchCategory = (currentCategory === 'all' || cardCat === currentCategory);
                     const matchSearch = (!currentSearch || cardTitle.includes(currentSearch));
 
-                    if (matchCategory && matchSearch) {
+                    if (matchLang && matchCategory && matchSearch) {
                         card.style.display = 'flex';
                         visibleCount++;
                     } else {
@@ -1336,18 +1951,78 @@
                     }
                 });
 
-                resultsCount.innerHTML = `Visualizzazione di <strong>${visibleCount} libri</strong> disponibili per l'acquisto immediato su Amazon`;
+                const note = (currentLang === 'it') ? dict.resultsLanguageNote : ((currentLang === 'en') ? dict.resultsLanguageNote : '');
+                const bookLabel = (currentLang === 'it') ? (visibleCount === 1 ? '1 libro' : `${visibleCount} libri`) : (visibleCount === 1 ? '1 book' : `${visibleCount} books`);
+                const noteHtml = note ? ` ${note}` : '';
+
+                if (visibleCount === 0) {
+                    resultsCount.innerHTML = `<span style="color: #c45500; font-weight: 600;">${dict.emptyResults}</span>`;
+                } else {
+                    resultsCount.innerHTML = `${dict.resultsPrefix} <strong>${bookLabel}</strong>${noteHtml} ${dict.resultsSuffix}`;
+                }
             }
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    currentCategory = btn.getAttribute('data-filter');
-                    updateDisplay();
+            function setLanguage(lang, updateUrl = true) {
+                currentLang = lang;
+                localStorage.setItem('kdp_catalog_lang', lang);
+
+                if (updateUrl) {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('lang', lang);
+                    window.history.replaceState(null, '', url.toString());
+                }
+
+                // Aggiorna stato visuale del bottone lingua
+                if (lang === 'it') {
+                    activeFlag.textContent = '🇮🇹';
+                    activeCode.textContent = 'IT';
+                } else if (lang === 'en') {
+                    activeFlag.textContent = '🇬🇧';
+                    activeCode.textContent = 'EN';
+                } else {
+                    activeFlag.textContent = '🌐';
+                    activeCode.textContent = 'ALL';
+                }
+
+                langOptions.forEach(opt => {
+                    if (opt.getAttribute('data-lang') === lang) {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+
+                currentCategory = 'all';
+                applyTranslations(lang);
+                renderCategoryFilters(lang);
+                updateSocialLinks(lang);
+                updateDisplay();
+            }
+
+            // Eventi Selettore Lingua
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langContainer.classList.toggle('open');
+                langBtn.setAttribute('aria-expanded', langContainer.classList.contains('open'));
+            });
+
+            langOptions.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    const chosen = opt.getAttribute('data-lang');
+                    setLanguage(chosen, true);
+                    langContainer.classList.remove('open');
+                    langBtn.setAttribute('aria-expanded', 'false');
                 });
             });
 
+            document.addEventListener('click', (e) => {
+                if (!langContainer.contains(e.target)) {
+                    langContainer.classList.remove('open');
+                    langBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Ricerca e Ordinamento
             searchInput.addEventListener('input', (e) => {
                 currentSearch = e.target.value.toLowerCase().trim();
                 updateDisplay();
@@ -1379,15 +2054,18 @@
                     const title = btn.getAttribute('data-title');
                     const url = btn.getAttribute('data-url');
                     const price = btn.getAttribute('data-price');
+                    const bLang = btn.getAttribute('data-lang') || currentLang;
+                    const dict = I18N[bLang] || I18N[currentLang] || I18N['en'];
+
                     let previews = [];
                     try {
                         previews = JSON.parse(btn.getAttribute('data-previews') || '[]');
                     } catch (e) {}
                     if (!previews.length) return;
 
-                    modalTitle.textContent = 'Anteprima interna: ' + title;
+                    modalTitle.textContent = `${dict.modalTitle} ${title}`;
                     modalAmazonLink.href = url;
-                    modalPriceNote.textContent = 'Prezzo Amazon: ' + price + ' ✓ Prime';
+                    modalPriceNote.textContent = `${dict.priceLabel} ${price} ✓ Prime`;
                     modalPagesContainer.innerHTML = '';
 
                     previews.forEach((src, i) => {
@@ -1395,10 +2073,10 @@
                         box.className = 'preview-page-card';
                         const img = document.createElement('img');
                         img.src = src;
-                        img.alt = 'Pagina interna ' + (i + 1);
+                        img.alt = `${dict.samplePage} ${i + 1}`;
                         const lbl = document.createElement('span');
                         lbl.className = 'preview-page-label';
-                        lbl.textContent = 'Esempio pagina ' + (i + 1);
+                        lbl.textContent = `${dict.samplePage} ${i + 1}`;
                         box.appendChild(img);
                         box.appendChild(lbl);
                         modalPagesContainer.appendChild(box);
@@ -1421,6 +2099,10 @@
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeModal();
             });
+
+            // Inizializzazione automatica al caricamento
+            const initialLang = getInitialLanguage();
+            setLanguage(initialLang, false);
         });
     </script>
 </body>
