@@ -112,11 +112,7 @@
       ],
       "amazon_url": "https://www.amazon.com/dp/B0GV339NJW",
       "cover_url": "assets/covers/B0GV339NJW.png",
-      "preview_images": [
-        "assets/previews/B0GV339NJW_p1.png",
-        "assets/previews/B0GV339NJW_p2.png",
-        "assets/previews/B0GV339NJW_p3.png"
-      ],
+      "preview_images": [],
       "format": "Paperback",
       "dimensions": "100 Pages • 8.5 × 11 in",
       "pages": "100 Pages"
