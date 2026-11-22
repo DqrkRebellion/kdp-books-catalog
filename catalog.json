@@ -64,10 +64,14 @@
       ],
       "amazon_url": "https://www.amazon.com/dp/B0HNPC6XF2",
       "cover_url": "assets/covers/B0HNPC6XF2.png",
-      "preview_images": [],
+      "preview_images": [
+        "assets/previews/B0HNPC6XF2_p1.png",
+        "assets/previews/B0HNPC6XF2_p2.png",
+        "assets/previews/B0HNPC6XF2_p3.png"
+      ],
       "format": "Paperback",
-      "dimensions": "100 Pages • 8.5 × 11 in",
-      "pages": "100 Pages"
+      "dimensions": "130 Pages • 8.5 × 11 in",
+      "pages": "130 Pages"
     },
     {
       "asin": "B0HNLWQ5CK",
@@ -132,7 +136,11 @@
       ],
       "amazon_url": "https://www.amazon.com/dp/B0GVF8HGMC",
       "cover_url": "assets/covers/B0GVF8HGMC.png",
-      "preview_images": [],
+      "preview_images": [
+        "assets/previews/B0GVF8HGMC_p1.png",
+        "assets/previews/B0GVF8HGMC_p2.png",
+        "assets/previews/B0GVF8HGMC_p3.png"
+      ],
       "format": "Paperback",
       "dimensions": "100 Pages • 8.5 × 11 in",
       "pages": "100 Pages"
