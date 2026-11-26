@@ -1,18 +1,21 @@
 {
-  "total_books": 6,
+  "brand": "LB Editorial — Mindful Logic & Screen-Free Focus Books",
+  "total_books": 5,
   "books": [
     {
       "asin": "B0HPBYGHHH",
       "language": "en",
+      "audience": "adults",
+      "marketplace": "amazon.com",
       "title": "Mindful Logic Puzzle Book for Adults",
       "subtitle": "100+ Intricate Puzzles for Relaxation and Focus (Ages 18+)",
       "author": "Lorenzo Biondi",
       "price": "$10.29 USD",
-      "category": "Adulti • Logica",
-      "badge": "Per Adulti • Livello Esperto",
+      "category": "Adults • Logic",
+      "badge": "For Adults • Mindful Edition",
       "bullets": [
-        "Progressive challenges with full verified solutions included",
-        "Spacious 8.5\" x 11\" format comfortable to write in"
+        "5 engaging types: Nonograms, 9x9 Sudoku, Cryptograms, Mazes & Logic Grids",
+        "Extra-large 8.5\" x 11\" 300 DPI layout with verified single solutions"
       ],
       "amazon_url": "https://www.amazon.com/dp/B0HPBYGHHH",
       "cover_url": "assets/covers/B0HPBYGHHH.png",
@@ -28,6 +31,8 @@
     {
       "asin": "B0HP8VR7N6",
       "language": "it",
+      "audience": "kids",
+      "marketplace": "amazon.it",
       "title": "100+ Sfide di Logica per Giovani Menti (Età 8–12 Anni)",
       "subtitle": "Potenzia la mente dei ragazzi con giochi deduttivi, labirinti e sfide stimolanti",
       "author": "Lorenzo Biondi",
@@ -46,12 +51,14 @@
         "assets/previews/B0HP8VR7N6_p3.png"
       ],
       "format": "Copertina Flessibile",
-      "dimensions": "130 Pagine • Formato 21,6 × 27,9 cm",
+      "dimensions": "130 Pagine • 21,6 × 27,9 cm",
       "pages": "130 Pagine"
     },
     {
       "asin": "B0HNPC6XF2",
       "language": "en",
+      "audience": "adults",
+      "marketplace": "amazon.com",
       "title": "100+ Expert Logic Puzzles for Adults",
       "subtitle": "Master Unique Challenges with Mazes, Sudoku, Logic Grids, Cryptograms and Word Searches",
       "author": "Lorenzo Biondi",
@@ -74,32 +81,10 @@
       "pages": "130 Pages"
     },
     {
-      "asin": "B0HNLWQ5CK",
-      "language": "en",
-      "title": "101 Mindful Puzzles for Seniors (Large Print)",
-      "subtitle": "101 Calming Large-Print Puzzles to Train Memory and Focus Without Eye Strain",
-      "author": "Lorenzo Biondi",
-      "price": "$9.99 USD",
-      "category": "Seniors • Large Print",
-      "badge": "Large Print Edition",
-      "bullets": [
-        "Extra-large high-contrast print with spacious, comfortable grids",
-        "Nonograms, Logic Grids, Sudoku, Kakuro and Ciphers with full answer keys"
-      ],
-      "amazon_url": "https://www.amazon.com/dp/B0HNLWQ5CK",
-      "cover_url": "assets/covers/B0HNLWQ5CK.png",
-      "preview_images": [
-        "assets/previews/B0HNLWQ5CK_p1.png",
-        "assets/previews/B0HNLWQ5CK_p2.png",
-        "assets/previews/B0HNLWQ5CK_p3.png"
-      ],
-      "format": "Paperback",
-      "dimensions": "80 Pages • 8.5 × 11 in",
-      "pages": "80 Pages"
-    },
-    {
       "asin": "B0GV339NJW",
       "language": "en",
+      "audience": "kids",
+      "marketplace": "amazon.com",
       "title": "ADHD Activity Book for Kids: 100 Focus Missions (Ages 3–5)",
       "subtitle": "100 Simple and Engaging Visual Missions to Strengthen Attention, Calm, and Focus in Little Ones",
       "author": "Lorenzo Biondi",
@@ -124,6 +109,8 @@
     {
       "asin": "B0GVF8HGMC",
       "language": "en",
+      "audience": "kids",
+      "marketplace": "amazon.com",
       "title": "ADHD Activity Book for Kids: 100 Focus Missions (Ages 6–7)",
       "subtitle": "Mazes, Logic Sequences, Word Searches, and Brain Games to Build Focus and Attention at Ages 6–7",
       "author": "Lorenzo Biondi",
@@ -132,7 +119,7 @@
       "badge": "Ages 6–7 • Elementary",
       "bullets": [
         "100 progressive missions: labyrinths, sequences, word puzzles, and logic",
-        "Perfect for early elementary school to build confidence and cognitive calm"
+        "Built for early elementary learners to build confidence and calm focus"
       ],
       "amazon_url": "https://www.amazon.com/dp/B0GVF8HGMC",
       "cover_url": "assets/covers/B0GVF8HGMC.png",
